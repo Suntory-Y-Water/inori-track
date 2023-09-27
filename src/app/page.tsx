@@ -19,6 +19,11 @@ export default function Home() {
             <button type='button'>Go to Result Page</button>
           </Link>
         </div>
+        <div>
+          <Link href='/todos'>
+            <button type='button'>Go to todos Page</button>
+          </Link>
+        </div>
       </div>
     </main>
   );
