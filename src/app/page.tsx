@@ -1,28 +1,18 @@
-import Link from 'next/link';
+import AddTask from './components/AddTask';
+import TodoList from './components/TodoList';
+
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
-        <p>Hello Home</p>
-        <div>
-          <Link href='/live'>
-            <button type='button'>Go to Live Page</button>
-          </Link>
-        </div>
-        <div>
-          <Link href='/venue'>
-            <button type='button'>Go to Venue Page</button>
-          </Link>
-        </div>
-        <div>
-          <Link href='/result'>
-            <button type='button'>Go to Result Page</button>
-          </Link>
-        </div>
-        <div>
-          <Link href='/todos'>
-            <button type='button'>Go to todos Page</button>
-          </Link>
+    <main>
+      <div className='flex flex-col items-center justify-center min-h-screen py-4 bg-gray-200 font-sans'>
+        <h1 className='text-4xl font-bold font-sans text-gray-700 -mt-32'>
+          Next.js Todo List tutorial
+        </h1>
+        <div className='w-full max-w-xl mt-6'>
+          <div className='w-full px-8 py-6 bg-white shadow-md rounded-lg'>
+            <AddTask />
+            <TodoList />
+          </div>
         </div>
       </div>
     </main>
