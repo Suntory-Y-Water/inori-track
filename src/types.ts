@@ -1,6 +1,7 @@
 export type ButtonProps = {
   text: string;
   color: keyof ColorClass;
+  href: string;
 };
 
 export type ColorClass = {

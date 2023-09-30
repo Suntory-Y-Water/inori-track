@@ -5,10 +5,17 @@ export default function Home() {
   return (
     <main className='flex flex-col items-center min-h-screen py-10'>
       <div className='space-y-4 w-80 md:w-full max-w-2xl'>
-        <Header text='LIVE TOUR 2019 Catch the Rainbow!' />
-        <Button text='結果を共有する' color='primary' />
-        <Button text='会場選択に戻る' color='secondary' />
-        <Button text='最初に戻る' color='tertiary' />
+        <Header text='水瀬いのりライブチェッカー' />
+        <p className='mb-12 font-sans pb-12 text-base'>
+          自分がまだライブで聴いたことのない曲を一覧で表示することができます。
+          <br />
+          <br />
+          ライブで聴いたことがある曲の回数も表示できます。
+          <br />
+          <br />
+          ライブを選択するを押したあと、ガイドに従って入力してください。
+        </p>
+        <Button text='ライブを選択する' color='primary' href='/live' />
       </div>
     </main>
   );
