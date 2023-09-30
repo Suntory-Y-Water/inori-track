@@ -1,24 +1,14 @@
-import Link from 'next/link';
+import Button from './components/Button';
+import Header from './components/Header';
+
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
-        <p>Hello Home</p>
-        <div>
-          <Link href='/live'>
-            <button type='button'>Go to Live Page</button>
-          </Link>
-        </div>
-        <div>
-          <Link href='/venue'>
-            <button type='button'>Go to Venue Page</button>
-          </Link>
-        </div>
-        <div>
-          <Link href='/result'>
-            <button type='button'>Go to Result Page</button>
-          </Link>
-        </div>
+    <main className='flex flex-col items-center min-h-screen py-10'>
+      <div className='space-y-4 w-80 md:w-full max-w-2xl'>
+        <Header text='LIVE TOUR 2019 Catch the Rainbow!' />
+        <Button text='結果を共有する' color='primary' />
+        <Button text='会場選択に戻る' color='secondary' />
+        <Button text='最初に戻る' color='tertiary' />
       </div>
     </main>
   );
