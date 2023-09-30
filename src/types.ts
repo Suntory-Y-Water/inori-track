@@ -13,3 +13,10 @@ export type ColorClass = {
 export type HeaderProps = {
   text: string;
 };
+
+export type StepNavigatorProps = {
+  steps: string[];
+  currentStep: number;
+};
+
+export const stepLabel = ['ライブ選択', '会場選択', '結果'];
