@@ -5,8 +5,6 @@ const StepNavigator: React.FC<StepNavigatorProps> = ({ steps, currentStep }) => 
   return (
     <div className='w-full flex flex-col items-center justify-center'>
       <div className='w-full flex justify-between mb-4'>
-        {' '}
-        {/* justify-betweenを使用 */}
         {steps.map((step, index) => (
           <div
             key={index}
@@ -17,12 +15,12 @@ const StepNavigator: React.FC<StepNavigatorProps> = ({ steps, currentStep }) => 
           >
             <div
               className={`h-8 w-8 rounded-full flex items-center justify-center ${
-                index < currentStep ? 'bg-blue-900 text-white' : 'bg-gray-200 text-gray-500'
+                index < currentStep ? 'bg-blue-900 text-white' : 'bg-gray-500 text-white'
               }`}
             >
               {index + 1}
             </div>
-            <div className='mt-2 text-center'>{step}</div> {/* text-centerを追加 */}
+            <div className='mt-2 text-center'>{step}</div>
           </div>
         ))}
       </div>
