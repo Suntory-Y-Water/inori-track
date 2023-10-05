@@ -1,10 +1,16 @@
 import React from 'react';
 import { HeaderProps } from '@/types';
 
-const Header: React.FC<HeaderProps> = ({ text }) => {
+const Header: React.FC<HeaderProps> = ({ text, titleFlag }) => {
   return (
     <div>
-      <h1 className='font-sans font-normal w-full text-4xl mb-12 mt-12'>{text}</h1>
+      <h1
+        className={`font-sans font-normal w-full text-4xl ${
+          titleFlag === false ? 'mb-12 mt-12' : 'mb-4 mt-8'
+        }`}
+      >
+        {text}
+      </h1>
     </div>
   );
 };
