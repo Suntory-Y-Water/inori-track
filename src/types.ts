@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 export type ButtonProps = {
   text: string;
   color: keyof ColorClass;
@@ -12,6 +14,7 @@ export type ColorClass = {
 
 export type HeaderProps = {
   text: string;
+  titleFlag: boolean;
 };
 
 export type StepNavigatorProps = {
@@ -26,4 +29,9 @@ export type LiveDataProps = {
   name: string;
   year?: number;
   live_type_id: number;
+};
+
+export type CheckboxProps = {
+  liveData: LiveDataProps;
+  onCheckboxChange: (id: number, checked: boolean) => void;
 };
