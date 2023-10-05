@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model LiveType {
+  id   Int      @id @default(autoincrement())
+  type String
+  lives LiveName[] // ライブ種別テーブルとライブ名テーブルのリレーション
+}
+
+model LiveName {
+  id           Int       @id @default(autoincrement())
+  name         String
+  year         Int
+  live_type_id Int
+  liveType     LiveType  @relation(fields: [live_type_id], references: [id])
+  venues       Venue[]   // ライブ名テーブルと会場テーブルのリレーション
+}
+
+model Venue {
+  id           Int       @id @default(autoincrement())
+  name         String
+  live_name_id Int
+  liveName     LiveName  @relation(fields: [live_name_id], references: [id])
+}
+
+model Song {
+  id     Int     @id @default(autoincrement())
+  title  String
+}
