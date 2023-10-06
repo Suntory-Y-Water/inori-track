@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 export type ButtonProps = {
   text: string;
   color: keyof ColorClass;
@@ -33,5 +31,5 @@ export type LiveDataProps = {
 
 export type CheckboxProps = {
   liveData: LiveDataProps;
-  onCheckboxChange: (id: number, checked: boolean) => void;
+  onCheckboxChange: (name: string, checked: boolean) => void;
 };

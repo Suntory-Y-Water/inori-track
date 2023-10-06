@@ -3,7 +3,7 @@ import { CheckboxProps } from '@/types';
 
 const Checkbox: React.FC<CheckboxProps> = ({ liveData, onCheckboxChange }) => {
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onCheckboxChange(liveData.id || 0, event.target.checked);
+    onCheckboxChange(liveData.name, event.target.checked);
   };
 
   return (
