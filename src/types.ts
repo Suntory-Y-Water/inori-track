@@ -23,7 +23,7 @@ export type StepNavigatorProps = {
 export const stepLabel = ['ライブ選択', '会場選択', '結果'];
 
 export type LiveDataProps = {
-  id?: number;
+  id: number;
   name: string;
   year?: number;
   live_type_id: number;
@@ -31,5 +31,12 @@ export type LiveDataProps = {
 
 export type CheckboxProps = {
   liveData: LiveDataProps;
-  onCheckboxChange: (name: string, checked: boolean) => void;
+  onCheckboxChange: (id: number, checked: boolean) => void;
+};
+
+export type VenueDataProps = {
+  id: number;
+  name: string;
+  live_name_id: number;
+  liveName: string;
 };
