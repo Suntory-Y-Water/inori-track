@@ -13,21 +13,20 @@ export default function Live() {
   const [selectedLives, setSelectedLives] = useAtom(selectedLivesAtom);
 
   const fetchData = async () => {
-    const response = await fetch('http://localhost:3000/api/getLive');
+    const response = await fetch('http://localhost:3000/api/live');
     const result: LiveDataProps[] = await response.json();
     setLiveLists(result);
   };
 
   useEffect(() => {
     fetchData();
-    //マウント時にatomの値を初期化する
     setSelectedLives([]);
   }, []);
 
-  const handleCheckboxChange = (name: string, checked: boolean) => {
+  const handleCheckboxChange = (id: number, checked: boolean) => {
     const updatedSelectedLives = checked
-      ? [...selectedLives, name]
-      : selectedLives.filter((selectedName) => selectedName !== name);
+      ? [...selectedLives, id]
+      : selectedLives.filter((selectedId) => selectedId !== id);
     setSelectedLives(updatedSelectedLives);
   };
 
@@ -43,7 +42,7 @@ export default function Live() {
         {inoriMinaseLive &&
           inoriMinaseLive.map((liveList) => (
             <CheckBox
-              key={liveList.live_type_id}
+              key={liveList.id}
               liveData={liveList}
               onCheckboxChange={handleCheckboxChange}
             />
@@ -52,7 +51,7 @@ export default function Live() {
         {townMeetingLive &&
           townMeetingLive.map((liveList) => (
             <CheckBox
-              key={liveList.live_type_id}
+              key={liveList.id}
               liveData={liveList}
               onCheckboxChange={handleCheckboxChange}
             />
