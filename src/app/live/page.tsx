@@ -2,18 +2,18 @@
 import { useAtom } from 'jotai';
 import { selectedLivesAtom } from '../state/atoms';
 import React, { useEffect, useState } from 'react';
-import Button from '../components/Button';
-import Header from '../components/Header';
+import Button from '../../components/Button';
+import Header from '../../components/Header';
 import { LiveDataProps, stepLabel } from '@/types';
-import StepNavigator from '../components/StepNavigator';
-import CheckBox from '../components/CheckBox';
+import StepNavigator from '../../components/StepNavigator';
+import CheckBox from '../../components/CheckBox';
 
 export default function Live() {
   const [liveLists, setLiveLists] = useState<LiveDataProps[]>([]);
   const [selectedLives, setSelectedLives] = useAtom(selectedLivesAtom);
 
   const fetchData = async () => {
-    const response = await fetch('http://localhost:3000/api/live');
+    const response = await fetch('api/live');
     const result: LiveDataProps[] = await response.json();
     setLiveLists(result);
   };

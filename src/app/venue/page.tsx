@@ -2,9 +2,9 @@
 import { useAtom } from 'jotai';
 import { selectedLivesAtom } from '../state/atoms';
 import { VenueDataProps, stepLabel } from '@/types';
-import Button from '../components/Button';
-import Header from '../components/Header';
-import StepNavigator from '../components/StepNavigator';
+import Button from '../../components/Button';
+import Header from '../../components/Header';
+import StepNavigator from '../../components/StepNavigator';
 import { useEffect, useState } from 'react';
 
 export default function Venue() {
@@ -12,7 +12,7 @@ export default function Venue() {
   const [selectedLives] = useAtom(selectedLivesAtom);
 
   const fetchData = async () => {
-    const response = await fetch(`http://localhost:3000/api/venue?id=${selectedLives.join(',')}`);
+    const response = await fetch(`api/venue?id=${selectedLives.join(',')}`);
     const result: VenueDataProps[] = await response.json();
     setVenueLists(result);
   };
