@@ -1,3 +1,3 @@
 import { atom } from 'jotai';
 
-export const selectedLivesAtom = atom<number[]>([]);
+export const selectedLivesAtom = atom<(string | number)[]>([]);

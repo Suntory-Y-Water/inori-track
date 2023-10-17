@@ -1,9 +1,9 @@
-import React from 'react';
 import { CheckboxProps } from '@/types';
+import React from 'react';
 
-const Checkbox: React.FC<CheckboxProps> = ({ liveData, onCheckboxChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ id, label, onCheckboxChange }) => {
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onCheckboxChange(liveData.id, event.target.checked);
+    onCheckboxChange(id, event.target.checked);
   };
 
   return (
@@ -11,10 +11,10 @@ const Checkbox: React.FC<CheckboxProps> = ({ liveData, onCheckboxChange }) => {
       <input
         className='relative w-4 h-4 mr-4 border border-white'
         type='checkbox'
-        id={String(liveData.id)}
+        id={String(id)}
         onChange={handleCheckboxChange}
       />
-      <label htmlFor={String(liveData.id)}>{liveData.name}</label>
+      <label htmlFor={String(id)}>{label}</label>
     </div>
   );
 };

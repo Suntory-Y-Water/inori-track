@@ -30,8 +30,9 @@ export type LiveDataProps = {
 };
 
 export type CheckboxProps = {
-  liveData: LiveDataProps;
-  onCheckboxChange: (id: number, checked: boolean) => void;
+  id: number | string;
+  label: string;
+  onCheckboxChange: (id: number | string, checked: boolean) => void;
 };
 
 export type VenueDataProps = {
