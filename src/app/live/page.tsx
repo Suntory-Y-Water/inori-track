@@ -23,7 +23,7 @@ export default function Live() {
     setSelectedLives([]);
   }, []);
 
-  const handleCheckboxChange = (id: number, checked: boolean) => {
+  const handleCheckboxChange = (id: string | number, checked: boolean) => {
     const updatedSelectedLives = checked
       ? [...selectedLives, id]
       : selectedLives.filter((selectedId) => selectedId !== id);
@@ -43,7 +43,8 @@ export default function Live() {
           inoriMinaseLive.map((liveList) => (
             <CheckBox
               key={liveList.id}
-              liveData={liveList}
+              id={liveList.id}
+              label={liveList.name}
               onCheckboxChange={handleCheckboxChange}
             />
           ))}
@@ -52,7 +53,8 @@ export default function Live() {
           townMeetingLive.map((liveList) => (
             <CheckBox
               key={liveList.id}
-              liveData={liveList}
+              id={liveList.id}
+              label={liveList.name}
               onCheckboxChange={handleCheckboxChange}
             />
           ))}

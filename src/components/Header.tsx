@@ -8,6 +8,7 @@ const Header: React.FC<HeaderProps> = ({ text, titleFlag }) => {
         className={`font-sans font-normal w-full text-4xl ${
           titleFlag === false ? 'mb-12 mt-12' : 'mb-4 mt-8'
         }`}
+        key={text}
       >
         {text}
       </h1>
