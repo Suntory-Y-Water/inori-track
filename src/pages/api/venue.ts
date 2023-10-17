@@ -12,7 +12,6 @@ export default async function getVenues(req: NextApiRequest, res: NextApiRespons
 
   const { id } = req.query;
 
-  // idが提供されていることを確認し、カンマで分割して数値の配列に変換
   if (!id || Array.isArray(id)) {
     res.status(400).end('Bad Request');
     return;
@@ -30,7 +29,19 @@ export default async function getVenues(req: NextApiRequest, res: NextApiRespons
         in: ids, // inオペレータを使用して、一致するいずれかのIDでデータベースクエリを作成
       },
     },
+    include: {
+      liveName: true, // liveName の情報も取得
+    },
   });
 
-  res.status(200).json(venues);
+  const modifiedVenues = venues.map((venue) => ({
+    id: venue.id,
+    name: venue.name,
+    live_name_id: venue.live_name_id,
+    liveName: venue.liveName.name,
+  }));
+
+  console.log(modifiedVenues);
+
+  res.status(200).json(modifiedVenues);
 }
