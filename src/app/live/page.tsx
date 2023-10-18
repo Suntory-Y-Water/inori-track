@@ -23,7 +23,7 @@ export default function Live() {
     setSelectedLives([]);
   }, []);
 
-  const handleCheckboxChange = (id: string | number, checked: boolean) => {
+  const handleCheckboxChange = (id: number, checked: boolean) => {
     const updatedSelectedLives = checked
       ? [...selectedLives, id]
       : selectedLives.filter((selectedId) => selectedId !== id);
@@ -41,22 +41,24 @@ export default function Live() {
         <Header text='水瀬いのり個人名義' titleFlag={true} />
         {inoriMinaseLive &&
           inoriMinaseLive.map((liveList) => (
-            <CheckBox
-              key={liveList.id}
-              id={liveList.id}
-              label={liveList.name}
-              onCheckboxChange={handleCheckboxChange}
-            />
+            <div key={liveList.id}>
+              <CheckBox
+                id={liveList.id}
+                label={liveList.name}
+                onCheckboxChange={handleCheckboxChange}
+              />
+            </div>
           ))}
         <Header text='町民集会' titleFlag={true} />
         {townMeetingLive &&
           townMeetingLive.map((liveList) => (
-            <CheckBox
-              key={liveList.id}
-              id={liveList.id}
-              label={liveList.name}
-              onCheckboxChange={handleCheckboxChange}
-            />
+            <div key={liveList.id}>
+              <CheckBox
+                id={liveList.id}
+                label={liveList.name}
+                onCheckboxChange={handleCheckboxChange}
+              />
+            </div>
           ))}
         <Button text='会場を選択する' color='primary' href='/venue' />
         <Button text='最初に戻る' color='secondary' href='/' />
