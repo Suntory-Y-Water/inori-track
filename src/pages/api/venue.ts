@@ -41,7 +41,5 @@ export default async function getVenues(req: NextApiRequest, res: NextApiRespons
     liveName: venue.liveName.name,
   }));
 
-  console.log(modifiedVenues);
-
   res.status(200).json(modifiedVenues);
 }
