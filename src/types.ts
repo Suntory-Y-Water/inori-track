@@ -2,12 +2,14 @@ export type ButtonProps = {
   text: string;
   color: keyof ColorClass;
   href: string;
+  disabled?: boolean;
 };
 
 export type ColorClass = {
   primary: string;
   secondary: string;
   tertiary: string;
+  disabled: string;
 };
 
 export type HeaderProps = {

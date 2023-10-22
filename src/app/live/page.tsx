@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
 import StepNavigator from '../../components/StepNavigator';
@@ -20,6 +20,10 @@ export default function Live() {
       : selectedLives.filter((selectedId) => selectedId !== id);
     setSelectedLives(updatedSelectedLives);
   };
+
+  useEffect(() => {
+    setSelectedLives([]);
+  }, []);
 
   if (isError) return;
   if (!liveLists) return;
