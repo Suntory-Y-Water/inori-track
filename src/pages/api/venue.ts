@@ -1,7 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '@/pages/api/prisma';
 
 export default async function getVenues(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
@@ -23,23 +21,28 @@ export default async function getVenues(req: NextApiRequest, res: NextApiRespons
     return;
   }
 
-  const venues = await prisma.venue.findMany({
-    where: {
-      live_name_id: {
-        in: ids, // inオペレータを使用して、一致するいずれかのIDでデータベースクエリを作成
+  try {
+    const venues = await prisma.venue.findMany({
+      where: {
+        live_name_id: {
+          in: ids, // inオペレータを使用して、一致するいずれかのIDでデータベースクエリを作成
+        },
       },
-    },
-    include: {
-      liveName: true, // liveName の情報も取得
-    },
-  });
+      include: {
+        liveName: true, // liveName の情報も取得
+      },
+    });
 
-  const modifiedVenues = venues.map((venue) => ({
-    id: venue.id,
-    name: venue.name,
-    live_name_id: venue.live_name_id,
-    liveName: venue.liveName.name,
-  }));
+    const modifiedVenues = venues.map((venue) => ({
+      id: venue.id,
+      name: venue.name,
+      live_name_id: venue.live_name_id,
+      liveName: venue.liveName.name,
+    }));
 
-  res.status(200).json(modifiedVenues);
+    res.status(200).json(modifiedVenues);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 }
