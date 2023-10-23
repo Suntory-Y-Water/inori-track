@@ -23,6 +23,7 @@ model LiveName {
   live_type_id Int
   liveType     LiveType  @relation(fields: [live_type_id], references: [id])
   venues       Venue[]   // ライブ名テーブルと会場テーブルのリレーション
+  songPerformances SongPerformance[]
 }
 
 model Venue {
@@ -30,9 +31,22 @@ model Venue {
   name         String
   live_name_id Int
   liveName     LiveName  @relation(fields: [live_name_id], references: [id])
+  songPerformances SongPerformance[]
 }
 
 model Song {
   id     Int     @id @default(autoincrement())
   title  String
+  songPerformances SongPerformance[]
+}
+
+model SongPerformance {
+  id          Int       @id @default(autoincrement())
+  live_name_id Int
+  venue_id     Int
+  song_id      Int
+  times_sung   Int
+  liveName     LiveName @relation(fields: [live_name_id], references: [id])
+  venue        Venue    @relation(fields: [venue_id], references: [id])
+  song         Song     @relation(fields: [song_id], references: [id])
 }
