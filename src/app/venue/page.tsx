@@ -36,6 +36,7 @@ export default function Venue() {
   return (
     <main className='flex flex-col items-center min-h-screen py-10'>
       <div className='space-y-4 w-80 md:w-full max-w-2xl'>
+        <Header text='☘会場を選ぼう' titleFlag={true} />
         <StepNavigator steps={stepLabel} currentStep={2} />
         {uniqueLiveNames.map((liveName) => (
           <div key={liveName}>
