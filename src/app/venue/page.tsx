@@ -4,9 +4,9 @@ import { VenueDataProps, stepLabel } from '@/types';
 import Button from '@/components/Button';
 import Header from '@/components/Header';
 import Checkbox from '@/components/CheckBox';
+import { selectedLivesAtom, selectedVenuesAtom } from '@/state/atoms';
 import StepNavigator from '@/components/StepNavigator';
 import useFetch from '@/hooks/useFetch';
-import { selectedLivesAtom, selectedVenuesAtom } from '@/state/atoms';
 import { useEffect } from 'react';
 
 export default function Venue() {
