@@ -7,8 +7,8 @@ import StepNavigator from '../../components/StepNavigator';
 import CheckBox from '../../components/CheckBox';
 import useFetch from '@/hooks/useFetch';
 import { useAtom } from 'jotai';
-import { selectedLivesAtom } from '../state/atoms';
 import { LiveDataProps, stepLabel } from '@/types';
+import { selectedLivesAtom } from '@/state/atoms';
 
 export default function Live() {
   const { data: liveLists, isError } = useFetch<LiveDataProps[]>({ url: 'api/live' });

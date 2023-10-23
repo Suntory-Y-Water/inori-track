@@ -1,34 +1,36 @@
 'use client';
 import { useAtom } from 'jotai';
-import { selectedLivesAtom } from '../state/atoms';
 import { VenueDataProps, stepLabel } from '@/types';
-import Button from '../../components/Button';
-import Header from '../../components/Header';
-import StepNavigator from '../../components/StepNavigator';
-import { useEffect, useState } from 'react';
+import Button from '@/components/Button';
+import Header from '@/components/Header';
 import Checkbox from '@/components/CheckBox';
+import StepNavigator from '@/components/StepNavigator';
+import useFetch from '@/hooks/useFetch';
+import { selectedLivesAtom, selectedVenuesAtom } from '@/state/atoms';
+import { useEffect } from 'react';
 
 export default function Venue() {
-  const [venueLists, setVenueLists] = useState<VenueDataProps[]>([]);
-  const [selectedLives, setSelectedLives] = useAtom(selectedLivesAtom);
+  const [selectedLives] = useAtom(selectedLivesAtom);
+  const [selectedVenues, setSelectedVenues] = useAtom(selectedVenuesAtom);
 
-  const fetchData = async () => {
-    const response = await fetch(`api/venue?id=${selectedLives.join(',')}`);
-    const result: VenueDataProps[] = await response.json();
-    setVenueLists(result);
+  const { data: venueLists, isError } = useFetch<VenueDataProps[]>({
+    url: `api/venue?id=${selectedLives.join(',')}`,
+  });
+
+  const handleCheckboxChange = (id: number, checked: boolean) => {
+    const updatedSelectedVenues = checked
+      ? [...selectedVenues, id]
+      : selectedVenues.filter((selectedId) => selectedId !== id);
+    setSelectedVenues(updatedSelectedVenues);
+    console.log(updatedSelectedVenues);
   };
 
   useEffect(() => {
-    fetchData();
-    setVenueLists([]);
+    setSelectedVenues([]);
   }, []);
 
-  const handleCheckboxChange = (id: number, checked: boolean) => {
-    const updatedSelectedLives = checked
-      ? [...selectedLives, id]
-      : selectedLives.filter((selectedId) => selectedId !== id);
-    setSelectedLives(updatedSelectedLives);
-  };
+  if (isError) return;
+  if (!venueLists) return;
 
   const uniqueLiveNames = Array.from(new Set(venueLists.map((venue) => venue.liveName)));
 
@@ -52,7 +54,12 @@ export default function Venue() {
               ))}
           </div>
         ))}
-        <Button text='結果を見る' color='primary' href='/result' />
+        <Button
+          text='結果を見る'
+          color='primary'
+          href='/result'
+          disabled={selectedVenues.length === 0}
+        />
         <Button text='ライブ選択に戻る' color='secondary' href='/live' />
       </div>
     </main>
