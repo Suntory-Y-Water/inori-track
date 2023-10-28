@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push && next build",
+    "prisma:generate": "prisma generate",
+    "vercel-build": "next build && npm run prisma:generate",
     "start": "next start",
     "lint": "next lint --dir src",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
