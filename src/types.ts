@@ -43,3 +43,8 @@ export type VenueDataProps = {
   live_name_id: number;
   liveName: string;
 };
+
+export type ResultDataProps = {
+  id: number;
+  title: string;
+};

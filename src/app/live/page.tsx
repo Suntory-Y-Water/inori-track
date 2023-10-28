@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useEffect } from 'react';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
@@ -34,7 +33,7 @@ export default function Live() {
   return (
     <main className='flex flex-col items-center min-h-screen py-10'>
       <div className='space-y-4 w-80 md:w-full max-w-2xl'>
-        <Header text='参加したライブを選択してください' titleFlag={false} />
+        <Header text='☘参加したライブを選ぼう☘' titleFlag={false} />
         <StepNavigator steps={stepLabel} currentStep={1} />
         <Header text='水瀬いのり個人名義' titleFlag={true} />
         {inoriMinaseLive &&

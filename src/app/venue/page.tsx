@@ -36,7 +36,7 @@ export default function Venue() {
   return (
     <main className='flex flex-col items-center min-h-screen py-10'>
       <div className='space-y-4 w-80 md:w-full max-w-2xl'>
-        <Header text='☘会場を選ぼう' titleFlag={true} />
+        <Header text='☘参加した会場を選ぼう☘' titleFlag={true} />
         <StepNavigator steps={stepLabel} currentStep={2} />
         {uniqueLiveNames.map((liveName) => (
           <div key={liveName}>
@@ -44,7 +44,7 @@ export default function Venue() {
             {venueLists
               .filter((venue) => venue.liveName === liveName)
               .map((venue) => (
-                <div key={venue.name} className='mt-4 mb-4'>
+                <div key={venue.name} className='my-5'>
                   <Checkbox
                     id={venue.id}
                     label={venue.name}
