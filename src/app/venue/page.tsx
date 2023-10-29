@@ -44,7 +44,7 @@ export default function Venue() {
             {venueLists
               .filter((venue) => venue.liveName === liveName)
               .map((venue) => (
-                <div key={venue.name} className='my-5'>
+                <div key={venue.name} className='my-6'>
                   <Checkbox
                     id={venue.id}
                     label={venue.name}
