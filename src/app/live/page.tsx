@@ -38,7 +38,7 @@ export default function Live() {
         <Header text='水瀬いのり個人名義' titleFlag={true} />
         {inoriMinaseLive &&
           inoriMinaseLive.map((liveList) => (
-            <div key={liveList.id}>
+            <div key={liveList.id} className='my-6'>
               <CheckBox
                 id={liveList.id}
                 label={liveList.name}
