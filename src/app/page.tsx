@@ -10,9 +10,6 @@ export default function Home() {
           自分がまだライブで聴いたことのない曲を一覧で表示することができます。
           <br />
           <br />
-          ライブで聴いたことがある曲の回数も表示できます。
-          <br />
-          <br />
           ライブを選択するを押したあと、ガイドに従って入力してください。
         </p>
         <Button text='ライブを選択する' color='primary' href='/live' />
