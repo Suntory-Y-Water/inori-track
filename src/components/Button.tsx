@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ButtonProps, ColorClass } from '@/types';
+import { ButtonProps, ColorClass } from '@/types/types';
 
 const Button: React.FC<ButtonProps> = ({ text, color, href, disabled = false }) => {
   const colorClasses: ColorClass = {
