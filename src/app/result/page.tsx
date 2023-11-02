@@ -1,5 +1,5 @@
 'use client';
-import { ResultDataProps, stepLabel } from '@/types';
+import { ResultDataProps, stepLabel } from '@/types/types';
 import Button from '@/components/Button';
 import Header from '@/components/Header';
 import StepNavigator from '@/components/StepNavigator';

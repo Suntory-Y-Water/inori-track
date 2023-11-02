@@ -1,4 +1,4 @@
-import { CheckboxProps } from '@/types';
+import { CheckboxProps } from '@/types/types';
 import React from 'react';
 
 const Checkbox: React.FC<CheckboxProps> = ({ id, label, onCheckboxChange }) => {

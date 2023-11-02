@@ -41,10 +41,14 @@ export type VenueDataProps = {
   id: number;
   name: string;
   live_name_id: number;
-  liveName: string;
+  live_name: string;
 };
 
 export type ResultDataProps = {
   id: number;
   title: string;
+};
+
+export type GroupedVenues = {
+  [key: string]: VenueDataProps[];
 };
