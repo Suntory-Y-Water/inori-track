@@ -1,5 +1,5 @@
 import React from 'react';
-import { StepNavigatorProps } from '@/types';
+import { StepNavigatorProps } from '@/types/types';
 
 const StepNavigator: React.FC<StepNavigatorProps> = ({ steps, currentStep }) => {
   return (

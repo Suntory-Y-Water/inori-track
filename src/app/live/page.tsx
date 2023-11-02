@@ -6,7 +6,7 @@ import StepNavigator from '../../components/StepNavigator';
 import CheckBox from '../../components/CheckBox';
 import useFetch from '@/hooks/useFetch';
 import { useAtom } from 'jotai';
-import { LiveDataProps, stepLabel } from '@/types';
+import { LiveDataProps, stepLabel } from '@/types/types';
 import { selectedLivesAtom } from '@/state/atoms';
 
 export default function Live() {
