@@ -1,8 +1,5 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'inori-track',
@@ -11,8 +8,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html lang='ja'>
+      <body className='container mx-auto bg-cyan-500 text-slate-50'>
+        <main className='flex flex-col items-center min-h-screen py-10'>
+          <div className='space-y-4 w-80 md:w-full max-w-2xl'>{children}</div>
+        </main>
+      </body>
     </html>
   );
 }

@@ -1,3 +1,4 @@
+import { UseFetchProps } from '@/types/types';
 import useSWR from 'swr';
 
 type FetcherResponse<T> = T;
@@ -8,10 +9,6 @@ async function fetcher<T>(url: string): Promise<FetcherResponse<T>> {
     throw new Error('Network response was not ok ' + response.statusText);
   }
   return response.json();
-}
-
-interface UseFetchProps {
-  url: string;
 }
 
 export default function useFetch<T>({ url }: UseFetchProps) {
