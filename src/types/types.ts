@@ -12,7 +12,7 @@ export type ColorClass = {
   disabled: string;
 };
 
-export type HeaderProps = {
+export type TitleProps = {
   text: string;
   titleFlag: boolean;
 };
@@ -51,4 +51,8 @@ export type ResultDataProps = {
 
 export type GroupedVenues = {
   [key: string]: VenueDataProps[];
+};
+
+export type UseFetchProps = {
+  url: string | null;
 };
