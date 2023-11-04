@@ -4,14 +4,3 @@
 
 /* NotoSans */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap');
-
-:root {
-  --background-color: #06bee1;
-  --font-color: #ffffff;
-}
-
-body {
-  background: var(--background-color);
-  color: var(--font-color);
-  font-size: 16px;
-}
