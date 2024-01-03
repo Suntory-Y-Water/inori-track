@@ -1,17 +1,25 @@
+'use client';
+import { redirect } from 'next/navigation';
 import Button from '@/components/Button';
 import Title from '@/components/Title';
 
 export default function Home() {
+  const redirectUrl = () => {
+    redirect('http://localhost:3000//live');
+  };
   return (
     <>
       <Title text='水瀬いのりライブチェッカー' titleFlag={false} />
-      <p className='mb-12 font-sans pb-12 text-base'>
-        自分がまだライブで聴いたことのない曲を一覧で表示することができます。
+      <p className='mb-12 font-sans text-2xl rounded-md'>
+        こちらのサイトは移動しました。
         <br />
-        <br />
-        ライブを選択するを押したあと、ガイドに従って入力してください。
+        ボタンを押して新しいサイトで開いてください。
       </p>
-      <Button text='ライブを選択する' color='primary' href='/live' />
+      <Button
+        text='新しいサイトで開く'
+        color='primary'
+        href='https://my-portfolio-rouge-phi.vercel.app/live-checker'
+      />
     </>
   );
 }
