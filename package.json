@@ -1,37 +1,59 @@
 {
   "name": "inori-track",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "prisma:generate": "prisma generate",
-    "vercel-build": "next build && npm run prisma:generate",
-    "start": "next start",
-    "lint": "next lint --dir src",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@prisma/client": "^5.5.0",
-    "@types/node": "20.6.2",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "@vercel/postgres": "^0.5.0",
-    "autoprefixer": "10.4.15",
-    "eslint-config-next": "13.4.19",
-    "jotai": "^2.4.3",
-    "next": "^13.5.4",
-    "pg": "^8.11.3",
-    "pg-promise": "^11.5.4",
-    "postcss": "8.4.29",
-    "prettier": "^3.0.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-share": "^4.4.1",
-    "swr": "^2.2.4",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.312.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "eslint": "^8.50.0"
+    "@testing-library/jest-dom": "^6.2.0",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vitest/coverage-v8": "^1.2.1",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "happy-dom": "^13.2.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-tsconfig-paths": "^4.3.1",
+    "vitest": "^1.2.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
