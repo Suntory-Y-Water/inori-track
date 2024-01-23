@@ -1,3 +1,1 @@
-build/
-public/
-**/node_modules/
+*.md
