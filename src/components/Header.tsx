@@ -9,8 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 import { links } from '@/data/links';
 import { liveNames } from '@/data/live';
-import HeaderNavigation from './HeaderMenuItem';
-import HeaderToggleContent from './HeaderToggleContent';
+import MobileMenu from './MobileMenu';
 
 const Header = () => {
   return (
@@ -34,14 +33,28 @@ const Header = () => {
                   <ul className='gap-3 p-6 md:w-[400px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]'>
                     {liveNames.map((liveName) => (
                       <li key={liveName.id}>
-                        <HeaderToggleContent params={liveName} />
+                        <Link
+                          to={`set-list/${liveName.id}`}
+                          style={{ textDecoration: 'none' }}
+                          className='group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50'
+                        >
+                          {liveName.name}
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               {links.map((link) => (
-                <HeaderNavigation key={link.href} params={link} />
+                <NavigationMenuItem key={link.href}>
+                  <Link
+                    to={link.href}
+                    style={{ textDecoration: 'none' }}
+                    className='group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 key={link.href}'
+                  >
+                    {link.title}
+                  </Link>
+                </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
@@ -50,7 +63,9 @@ const Header = () => {
           <ModeToggle />
         </div>
       </div>
-      <div className='md:hidden border-t'>Mobile画面ならMenueが入る予定</div>
+      <div className='md:hidden border-t'>
+        <MobileMenu />
+      </div>
     </header>
   );
 };
