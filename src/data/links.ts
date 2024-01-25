@@ -8,3 +8,5 @@ export const links = [
     title: 'ライブチェッカー',
   },
 ];
+
+export type Links = (typeof links)[number];
