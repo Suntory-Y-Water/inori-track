@@ -1,88 +1,26 @@
-'use client';
-import { useAtom } from 'jotai';
-import { GroupedVenues, VenueDataProps } from '@/types/types';
-import Button from '@/components/Button';
-import Title from '@/components/Title';
-import Checkbox from '@/components/CheckBox';
-import { selectedLivesAtom, selectedVenuesAtom } from '@/state/atoms';
-import useFetch from '@/hooks/useFetch';
-import { useEffect, useState } from 'react';
-import Loading from '@/components/Loading';
+import VenueCheckBoxForms from './VenueCheckBoxForms';
+import { useSearchParams } from 'react-router-dom';
+import { venues, liveNames } from '@/data';
+import { SelectLiveNameAndVenueProps } from '@/types';
 
-const groupVenuesByLiveName = (venues: VenueDataProps[]): GroupedVenues => {
-  return venues.reduce<GroupedVenues>((acc, venue) => {
-    (acc[venue.live_name] = acc[venue.live_name] || []).push(venue);
-    return acc;
-  }, {});
-};
+const Venue = () => {
+  const [searchParams] = useSearchParams();
+  const liveId = searchParams.getAll('live_id');
+  const lives = liveNames.filter((live) => liveId.includes(live.id));
 
-const Venue: React.FC = () => {
-  const [selectedLives, setSelectedLives] = useAtom(selectedLivesAtom);
-  const [selectedVenues, setSelectedVenues] = useAtom(selectedVenuesAtom);
-  const [shouldFetch, setShouldFetch] = useState(false);
-
-  // selectedLivesが設定された後にuseFetchを呼び出す
-  const {
-    data: venueLists,
-    isLoading,
-    isError,
-  } = useFetch<VenueDataProps[]>({
-    url: shouldFetch ? `api/venue?id=${selectedLives.join(',')}` : null,
+  // 各ライブに対して対応する会場を検索
+  const liveDetails: SelectLiveNameAndVenueProps[] = lives.map((live) => {
+    const liveVenues = venues
+      .filter((venue) => venue.liveNameId === live.id)
+      .map((venue) => ({ id: venue.id, name: venue.name }));
+    return { liveName: live.name, venues: liveVenues };
   });
 
-  const handleCheckboxChange = (id: number, checked: boolean) => {
-    const updatedSelectedVenues = checked
-      ? [...selectedVenues, id]
-      : selectedVenues.filter((selectedId) => selectedId !== id);
-    setSelectedVenues(updatedSelectedVenues);
-  };
-
-  useEffect(() => {
-    setSelectedVenues([]);
-  }, []);
-
-  // localStorageからselectedLivesを読み込む
-  useEffect(() => {
-    const savedSelectedLives = localStorage.getItem('selectedLives');
-    if (savedSelectedLives) {
-      const parsedLives = JSON.parse(savedSelectedLives);
-      setSelectedLives(parsedLives);
-
-      // selectedLivesがある場合のみフェッチを許可
-      setShouldFetch(parsedLives.length > 0);
-    }
-  }, []);
-
-  // selectedVenuesが更新されたら、localStorageに保存する
-  useEffect(() => {
-    localStorage.setItem('selectedVenues', JSON.stringify(selectedVenues));
-  }, [selectedVenues]);
-
-  const groupedVenues = venueLists ? groupVenuesByLiveName(venueLists) : {};
-
-  if (isLoading) return <Loading />;
-  if (isError || !venueLists) return <Button text='最初に戻る' color='primary' href='/' />;
-
   return (
-    <>
-      {Object.keys(groupedVenues).map((live_name, index) => (
-        <div key={live_name + index}>
-          <Title text={live_name} titleFlag={true} />
-          {groupedVenues[live_name].map((venue) => (
-            <div key={venue.id} className='my-6'>
-              <Checkbox id={venue.id} label={venue.name} onCheckboxChange={handleCheckboxChange} />
-            </div>
-          ))}
-        </div>
-      ))}
-      <Button
-        text='結果を見る'
-        color='primary'
-        href='/result'
-        disabled={selectedVenues.length === 0}
-      />
-      <Button text='ライブ選択に戻る' color='secondary' href='/live' />
-    </>
+    <div className='md:w-2/3'>
+      <h1 className='pb-4 font-bold text-2xl'>参加したライブを選ぼう</h1>
+      <VenueCheckBoxForms params={liveDetails} />
+    </div>
   );
 };
 

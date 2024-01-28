@@ -1,53 +1,23 @@
-'use client';
-import { ResultDataProps } from '@/types/types';
-import Button from '@/components/Button';
-import useFetch from '@/hooks/useFetch';
-import { useAtom } from 'jotai';
-import { selectedVenuesAtom } from '@/state/atoms';
-import Loading from './Loading';
-import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { songs, songsSung } from '@/data';
+import ResultShare from './ResultShare';
 
-const Result: React.FC = () => {
-  const [selectedVenues, setSelectedVenues] = useAtom(selectedVenuesAtom);
-  const [shouldFetch, setShouldFetch] = useState(false);
+const Result = () => {
+  const [searchParams] = useSearchParams();
+  const venueIds = searchParams.getAll('venue_id');
 
-  const {
-    data: resultLists,
-    isLoading,
-    isError,
-  } = useFetch<ResultDataProps[]>({
-    url: shouldFetch ? `api/result?venue_id=${selectedVenues.join(',')}` : null,
-  });
+  const sungSongIds = songsSung
+    .filter((songSung) => venueIds.includes(songSung.venueId))
+    .map((songSung) => songSung.songId);
 
-  // localStorageからselectedVenuesを読み込む
-  useEffect(() => {
-    const savedSelectedVenues = localStorage.getItem('selectedVenues');
-    if (savedSelectedVenues) {
-      setSelectedVenues(JSON.parse(savedSelectedVenues));
-      const parsedVenues = JSON.parse(savedSelectedVenues);
-      // selectedLivesがある場合のみフェッチを許可
-      setShouldFetch(parsedVenues.length > 0);
-    }
-  }, []);
-
-  if (isLoading) return <Loading />;
-  if (isError || !resultLists) return <Button text='最初に戻る' color='primary' href='/' />;
-
-  const songsCount = resultLists.length;
+  const uniqueSungSongIds = Array.from(new Set(sungSongIds));
+  const unsungSongs = songs.filter((song) => !uniqueSungSongIds.includes(song.id));
 
   return (
-    <>
-      <p className='mr-2 text-xl font-medium'>聴いたことがない曲は{songsCount}曲です</p>
-      <ul>
-        {resultLists.map((song) => (
-          <li key={song.id} className='py-1'>
-            {song.title}
-          </li>
-        ))}
-      </ul>
-      <Button text='会場選択に戻る' color='primary' href='/venue' />
-      <Button text='最初に戻る' color='secondary' href='/' />
-    </>
+    <div className='md:w-2/3'>
+      <h1 className='pb-4 font-bold text-2xl'>聴いたことない曲一覧</h1>
+      <ResultShare params={unsungSongs} />
+    </div>
   );
 };
 
