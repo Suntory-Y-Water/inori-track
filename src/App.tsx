@@ -1,32 +1,27 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
-import { Button } from './components/ui/button';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Layout from './Layout';
+import Live from './components/Live';
+import SetList from './components/SetList';
+import LiveDetail from './components/LiveDetail';
+import Venue from './components/Venue';
+import Result from './components/Result';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='font-bold text-red-500'>
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <Button variant='default'>Push!</Button>
-      </div>
-      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-    </>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/live' element={<Live />} />
+          <Route path='/venue' element={<Venue />} />
+          <Route path='/result' element={<Result />} />
+          <Route path='/set-list' element={<SetList />} />
+          <Route path='/set-list/:id' element={<LiveDetail />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
