@@ -1,8 +1,19 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { songsSung, songs, venues, liveNames } from '@/data';
+import { useEffect } from 'react';
 
 const LiveDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // 対応するライブデータが存在するかチェック
+    const liveExists = liveNames.some((live) => live.id === id);
+    if (!liveExists) {
+      // データが存在しない場合は404ページにリダイレクト
+      navigate('/404');
+    }
+  }, [id, navigate]);
 
   // URLのidからライブの名称を検索
   const liveName = liveNames.find((live) => live.id === id)?.name;
@@ -31,7 +42,7 @@ const LiveDetail = () => {
           <h2 className='text-2xl font-semibold'>{group.venueName}</h2>
           <ul>
             {group.songs.map((song, songIndex) => (
-              <li key={songIndex} className='py-0.5'>
+              <li key={`${group.venueName}-${songIndex}`} className='py-0.5'>
                 {song}
               </li>
             ))}
