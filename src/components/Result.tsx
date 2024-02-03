@@ -1,11 +1,14 @@
 import { useSearchParams } from 'react-router-dom';
 import { songs, songsSung } from '@/data';
 import ResultShare from './ResultShare';
+import { useEffect } from 'react';
 
 const Result = () => {
   const [searchParams] = useSearchParams();
   const venueIds = searchParams.getAll('venue_id');
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const sungSongIds = songsSung
     .filter((songSung) => venueIds.includes(songSung.venueId))
     .map((songSung) => songSung.songId);

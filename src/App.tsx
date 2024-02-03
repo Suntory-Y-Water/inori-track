@@ -7,6 +7,7 @@ import SetList from './components/SetList';
 import LiveDetail from './components/LiveDetail';
 import Venue from './components/Venue';
 import Result from './components/Result';
+import { Page404 } from './page404';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/result' element={<Result />} />
           <Route path='/set-list' element={<SetList />} />
           <Route path='/set-list/:id' element={<LiveDetail />} />
+          <Route path='*' element={<Page404 />} />
         </Routes>
       </Layout>
     </Router>
