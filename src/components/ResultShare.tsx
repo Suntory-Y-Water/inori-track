@@ -14,7 +14,7 @@ export default function ResultShare({ params }: { params: { id: string; title: s
     },
   });
 
-  const tweetText = `あなたが聴いたことのない曲は77曲中${params.length}曲でした!\r\nhttps://my-portfolio-rouge-phi.vercel.app/live-checker\r\n#水瀬いのりライブチェッカー`;
+  const tweetText = `あなたが聴いたことのない曲は77曲中${params.length}曲でした!\r\nhttps://inori-track.vercel.app/\r\n#水瀬いのりライブチェッカー`;
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 
   return (
@@ -61,6 +61,11 @@ export default function ResultShare({ params }: { params: { id: string; title: s
           最初に戻る
         </Button>
       </Link>
+      <div className='mt-4 text-sm'>
+        <p>
+          ※コンテンツブロッカー(広告ブロッカー)を使用している場合、X(Twitter)への共有機能が制限されることがあります。
+        </p>
+      </div>
     </Form>
   );
 }

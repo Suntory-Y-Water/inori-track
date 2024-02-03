@@ -2,11 +2,16 @@ import VenueCheckBoxForms from './VenueCheckBoxForms';
 import { useSearchParams } from 'react-router-dom';
 import { venues, liveNames } from '@/data';
 import { SelectLiveNameAndVenueProps } from '@/types';
+import { useEffect } from 'react';
 
 const Venue = () => {
   const [searchParams] = useSearchParams();
   const liveId = searchParams.getAll('live_id');
   const lives = liveNames.filter((live) => liveId.includes(live.id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // 各ライブに対して対応する会場を検索
   const liveDetails: SelectLiveNameAndVenueProps[] = lives.map((live) => {
