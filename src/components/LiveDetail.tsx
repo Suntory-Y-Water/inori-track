@@ -6,11 +6,10 @@ const LiveDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  // 対応するライブデータが存在するかチェック
   useEffect(() => {
-    // 対応するライブデータが存在するかチェック
     const liveExists = liveNames.some((live) => live.id === id);
     if (!liveExists) {
-      // データが存在しない場合は404ページにリダイレクト
       navigate('/404');
     }
   }, [id, navigate]);
