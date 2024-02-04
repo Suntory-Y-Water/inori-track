@@ -23,5 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
+# live data
 config
+
+# test files
 coverage
+html
+__snapshots__

@@ -6,6 +6,9 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
+    resolveSnapshotPath: (path, extension) => {
+      return path.replace('/src/', '/__snapshots__/') + extension;
+    },
     globals: true,
     environment: 'happy-dom',
     setupFiles: ['./vitest-setup.ts'],
