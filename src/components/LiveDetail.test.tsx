@@ -48,15 +48,4 @@ describe('LiveDetail コンポーネント', () => {
       });
     });
   });
-  // test('曲が見つからない場合の処理', () => {
-  //   // 曲が見つからないライブIDを返すようにuseParamsをモック
-  //   vi.mocked(useParams).mockReturnValue({ id: 'non-existent-live' });
-
-  //   const { container } = render(
-  //     <MemoryRouter>
-  //       <LiveDetail />
-  //     </MemoryRouter>,
-  //   );
-  //   expect(container).toMatchSnapshot();
-  // });
 });
