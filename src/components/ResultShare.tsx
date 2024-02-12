@@ -25,7 +25,9 @@ export default function ResultShare({ params }: { params: { id: string; title: s
         render={() => (
           <FormItem>
             <div className='mt-4 mb-2'>
-              <FormLabel className='font-bold text-xl'>あなたが聴いたことのない曲は…</FormLabel>
+              <FormLabel className='font-bold text-xl'>
+                あなたが聴いたことのない曲は{params.length}曲でした！
+              </FormLabel>
             </div>
             {params.map((param) => (
               <FormField
