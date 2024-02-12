@@ -14,7 +14,9 @@ describe('ResultShareコンポーネント', () => {
       </MemoryRouter>,
     );
     // テキストの確認
-    expect(screen.getByText('あなたが聴いたことのない曲は…')).toBeInTheDocument();
+    expect(
+      screen.getByText(`あなたが聴いたことのない曲は${mockParams.length}曲でした！`),
+    ).toBeInTheDocument();
     mockParams.forEach((param) => {
       expect(screen.getByText(param.title)).toBeInTheDocument();
     });
