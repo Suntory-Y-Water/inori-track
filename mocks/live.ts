@@ -54,6 +54,11 @@ export const liveNames = [
     name: 'いのりまち町民集会2023',
     liveType: '町民集会',
   },
+  {
+    id: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    name: 'いのりまち町民集会2024 -ACOUSTIC LIVE Wonder Caravan！-',
+    liveType: '町民集会',
+  },
 ];
 
 export type LiveName = (typeof liveNames)[number];
