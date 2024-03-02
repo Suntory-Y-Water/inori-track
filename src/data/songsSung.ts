@@ -3803,6 +3803,72 @@ export const songsSung = [
     venueId: '39',
     songId: '69',
   },
+  {
+    id: '635',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '74',
+  },
+  {
+    id: '636',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '50',
+  },
+  {
+    id: '637',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '52',
+  },
+  {
+    id: '638',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '6',
+  },
+  {
+    id: '639',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '64',
+  },
+  {
+    id: '640',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '32',
+  },
+  {
+    id: '641',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '51',
+  },
+  {
+    id: '642',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '28',
+  },
+  {
+    id: '643',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '42',
+  },
+  {
+    id: '644',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '53',
+  },
+  {
+    id: '645',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    venueId: '40',
+    songId: '69',
+  },
 ];
 
 export type SongsSungType = (typeof songsSung)[number];
