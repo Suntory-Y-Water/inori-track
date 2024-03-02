@@ -194,6 +194,11 @@ export const venues = [
     name: '滋賀',
     liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
   },
+  {
+    id: '40',
+    name: '愛知',
+    liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+  },
 ];
 
 export type Venue = (typeof venues)[number];
