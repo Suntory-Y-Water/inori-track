@@ -5,7 +5,7 @@ export const Page404 = () => {
   return (
     <div className='md:w-2/3'>
       <h1 className='pb-4 font-bold text-2xl'>404 Not Found</h1>
-      <p className='font-bold'>お探しのページが見つかりませんでした。</p>
+      <p>お探しのページが見つかりませんでした。</p>
       <Link to='/' style={{ textDecoration: 'none' }}>
         <Button
           variant='default'
