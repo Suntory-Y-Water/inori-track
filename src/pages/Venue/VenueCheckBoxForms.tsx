@@ -72,7 +72,7 @@ const VenueCheckBoxForms = ({ params }: { params: SelectLiveNameAndVenueProps[] 
         disabled={form.watch('items').length === 0}
         onClick={handleButtonClick}
       >
-        次へ進む
+        結果を見る
       </Button>
       <Link to='/live' style={{ textDecoration: 'none' }}>
         <Button
