@@ -20,7 +20,7 @@ const Header = () => {
       <div className='container px-4 flex h-14 items-center'>
         <Link to='/' style={{ textDecoration: 'none' }}>
           <h1 className='flex ml-3 text-3xl title-font font-medium items-center md:mb-0'>
-            Inori Track
+            いのなび
           </h1>
         </Link>
 

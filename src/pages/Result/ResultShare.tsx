@@ -47,14 +47,14 @@ export default function ResultShare({ params }: { params: { id: string; title: s
           </FormItem>
         )}
       />
-      <Link to={tweetUrl} style={{ textDecoration: 'none' }}>
+      <a href={tweetUrl} style={{ textDecoration: 'none' }} target='_blank' rel='noreferrer'>
         <Button
           variant='default'
           className='w-full items-center justify-center p-6 my-2 tracking-tight'
         >
           結果をX(Twitter)で共有する
         </Button>
-      </Link>
+      </a>
       <Link to='/' style={{ textDecoration: 'none' }}>
         <Button
           variant='secondary'

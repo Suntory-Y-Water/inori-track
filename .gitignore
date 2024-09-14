@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # live data
-config
+# config
 
 # test files
 coverage

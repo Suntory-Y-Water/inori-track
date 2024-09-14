@@ -2,11 +2,11 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Layout from './Layout';
-import Live from './components/Live';
-import SetList from './components/SetList';
-import LiveDetail from './components/LiveDetail';
-import Venue from './components/Venue';
-import Result from './components/Result';
+import Live from './pages/Live/Live';
+import SetList from './pages/SetList/SetList';
+import LiveDetail from './pages/Live/LiveDetail';
+import Venue from './pages/Venue/Venue';
+import Result from './pages/Result/Result';
 import { Page404 } from './page404';
 
 function App() {

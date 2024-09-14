@@ -1,5 +1,5 @@
 import { liveNames } from '@/data/live';
-import CheckBoxForms from './CheckBoxForms';
+import CheckBoxForms from '@/pages/Live/CheckBoxForms';
 import { useEffect } from 'react';
 
 const Live = () => {
