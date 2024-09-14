@@ -23,10 +23,7 @@ const CheckBoxForms = ({ params }: { params: LiveName[] }) => {
     e.preventDefault();
     const selectedItems = form.watch('items');
     // Inori Minase LIVE TOUR 2024 heart bookmarkが選択されているかチェック
-    // TODO: ライブツアー2024のデータを追加したら、IDを修正する
-    const hasAcousticLive = selectedItems.includes(
-      'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
-    );
+    const hasAcousticLive = selectedItems.includes('live-tour-2024-heart-bookmark');
 
     if (hasAcousticLive) {
       // Inori Minase LIVE TOUR 2024 heart bookmarkが選択されていた場合、Popup を表示
