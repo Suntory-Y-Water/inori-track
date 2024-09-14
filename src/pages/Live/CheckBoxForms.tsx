@@ -6,8 +6,11 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { FormValues } from '@/types';
+import { useState } from 'react';
+import Popup from '@/components/ui/popup';
 
 const CheckBoxForms = ({ params }: { params: LiveName[] }) => {
+  const [isAlertDialogOpen, setAlertDialogOpen] = useState(false);
   const navigate = useNavigate();
 
   const form = useForm<FormValues>({
@@ -19,10 +22,41 @@ const CheckBoxForms = ({ params }: { params: LiveName[] }) => {
   const handleButtonClick = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const selectedItems = form.watch('items');
+    // Inori Minase LIVE TOUR 2024 heart bookmarkが選択されているかチェック
+    // TODO: ライブツアー2024のデータを追加したら、IDを修正する
+    const hasAcousticLive = selectedItems.includes(
+      'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
+    );
+
+    if (hasAcousticLive) {
+      // Inori Minase LIVE TOUR 2024 heart bookmarkが選択されていた場合、Popup を表示
+      setAlertDialogOpen(true);
+    } else {
+      // 選択されていない場合は通常の処理を実行
+      proceedWithNavigation(selectedItems);
+    }
+  };
+
+  // 選択されたアイテムでナビゲーションを実行する関数
+  function proceedWithNavigation(selectedItems: string[]) {
     const queryParams = new URLSearchParams();
     selectedItems.forEach((item) => queryParams.append('live_id', item));
     navigate(`/venue?${queryParams.toString()}`);
-  };
+  }
+
+  // 'はい' ボタンがクリックされた時に実行する関数
+  //  画面遷移する
+  function confirmAcousticLive() {
+    const selectedItems = form.watch('items');
+    proceedWithNavigation(selectedItems);
+    setAlertDialogOpen(false);
+  }
+
+  // 'いいえ' ボタンがクリックされた時に実行する関数
+  // POPUPを非表示にする
+  function cancelAcousticLive() {
+    setAlertDialogOpen(false);
+  }
 
   const inoriMinaseLives = params.filter((param) => param.liveType === '水瀬いのり個人名義');
   const townMeetingLives = params.filter((param) => param.liveType === '町民集会');
@@ -103,7 +137,7 @@ const CheckBoxForms = ({ params }: { params: LiveName[] }) => {
         disabled={form.watch('items').length === 0}
         onClick={handleButtonClick}
       >
-        次へ進む
+        会場を選択する
       </Button>
       <Link to='/' style={{ textDecoration: 'none' }}>
         <Button
@@ -113,6 +147,15 @@ const CheckBoxForms = ({ params }: { params: LiveName[] }) => {
           最初に戻る
         </Button>
       </Link>
+      <Popup
+        isOpen={isAlertDialogOpen}
+        onClose={cancelAcousticLive}
+        description='Inori Minase LIVE TOUR 2024 heart bookmarkのネタバレが含まれますが、よろしいですか？'
+        okText='会場を選択する'
+        cancelText='選び直す'
+        onConfirm={confirmAcousticLive}
+        onCancel={cancelAcousticLive}
+      />
     </Form>
   );
 };
