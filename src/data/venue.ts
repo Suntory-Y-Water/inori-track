@@ -199,6 +199,41 @@ export const venues = [
     name: '愛知',
     liveNameId: 'inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-',
   },
+  {
+    id: '41',
+    name: '兵庫',
+    liveNameId: 'live-tour-2024-heart-bookmark',
+  },
+  // {
+  //   id: '42',
+  //   name: '広島',
+  //   liveNameId: 'live-tour-2024-heart-bookmark',
+  // },
+  // {
+  //   id: '43',
+  //   name: '愛知',
+  //   liveNameId: 'live-tour-2024-heart-bookmark',
+  // },
+  // {
+  //   id: '44',
+  //   name: '福岡',
+  //   liveNameId: 'live-tour-2024-heart-bookmark',
+  // },
+  // {
+  //   id: '45',
+  //   name: '北海道',
+  //   liveNameId: 'live-tour-2024-heart-bookmark',
+  // },
+  // {
+  //   id: '46',
+  //   name: '千葉1日目',
+  //   liveNameId: 'live-tour-2024-heart-bookmark',
+  // },
+  // {
+  //   id: '47',
+  //   name: '千葉2日目',
+  //   liveNameId: 'live-tour-2024-heart-bookmark',
+  // },
 ];
 
 export type Venue = (typeof venues)[number];

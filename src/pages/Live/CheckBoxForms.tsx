@@ -76,7 +76,7 @@ const CheckBoxForms = ({ params }: { params: LiveName[] }) => {
                 render={({ field }) => (
                   <FormItem
                     key={inoriMinaseLive.id}
-                    className='flex flex-row items-start space-x-3 space-y-0 pb-6'
+                    className='flex flex-row items-start space-x-3 space-y-0 py-1 pb-6'
                   >
                     <FormControl>
                       <Checkbox
@@ -106,7 +106,7 @@ const CheckBoxForms = ({ params }: { params: LiveName[] }) => {
                 render={({ field }) => (
                   <FormItem
                     key={townMeetingLive.id}
-                    className='flex flex-row items-start space-x-3 space-y-0 pb-6'
+                    className='flex flex-row items-start space-x-3 space-y-0 py-1 pb-6'
                   >
                     <FormControl>
                       <Checkbox
