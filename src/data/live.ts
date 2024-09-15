@@ -35,6 +35,11 @@ export const liveNames = [
     liveType: '水瀬いのり個人名義',
   },
   {
+    id: 'live-tour-2024-heart-bookmark',
+    name: 'LIVE TOUR 2024 heart bookmark',
+    liveType: '水瀬いのり個人名義',
+  },
+  {
     id: 'inorimachi-town-meeting-2018',
     name: 'いのりまち町民集会2018',
     liveType: '町民集会',
