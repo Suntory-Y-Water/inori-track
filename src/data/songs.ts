@@ -307,6 +307,26 @@ export const songs = [
     id: '77',
     title: 'Milky Star',
   },
+  {
+    id: '78',
+    title: 'heart bookmark',
+  },
+  {
+    id: '79',
+    title: 'フラーグム',
+  },
+  {
+    id: '80',
+    title: 'ほしとね、',
+  },
+  {
+    id: '81',
+    title: 'グラデーション',
+  },
+  {
+    id: '82',
+    title: '燈籠光柱',
+  },
 ];
 
 export type SongsType = (typeof songs)[number];
