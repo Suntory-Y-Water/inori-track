@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
+import Header from './Header';
 
 const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] });
 
@@ -20,8 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={`${notoSansJp.className}`}>
-        <main className='mx-auto w-[calc(100%-40px)] max-w-[1280px] my-8'>{children}</main>
+      <body className={notoSansJp.className}>
+        <Header />
+        <main className='mx-auto w-[calc(100%-40px)] max-w-[720px] my-8 text-baseblack'>
+          {children}
+        </main>
       </body>
     </html>
   );

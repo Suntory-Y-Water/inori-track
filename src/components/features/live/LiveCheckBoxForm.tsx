@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import type { LiveName } from '@/data';
@@ -18,7 +19,6 @@ type Props = {
 export default function LiveCheckBoxForm({ params }: Props) {
   const [isAlertDialogOpen, setAlertDialogOpen] = useState<boolean>(false);
 
-  // TODO: ベストプラクティスはないか
   const router = useRouter();
 
   const form = useForm<FormValues<string>>({

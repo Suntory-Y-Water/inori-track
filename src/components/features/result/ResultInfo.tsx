@@ -19,9 +19,9 @@ export default function ResultInfo({ params }: props) {
         </h2>
       </div>
       {params.map((param) => (
-        <div key={param.id} className='flex flex-row items-start space-x-3 space-y-0 py-1'>
-          <p className='font-normal'>{param.title}</p>
-        </div>
+        <ul key={param.id} className='list-disc list-outside mt-1 ml-6 py-1'>
+          <li className='marker:text-primary'>{param.title}</li>
+        </ul>
       ))}
 
       <Button
