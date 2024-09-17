@@ -1,6 +1,6 @@
 import ResultInfo from '@/components/features/result/ResultInfo';
 import { songs, songsSung } from '@/data';
-import { headers } from 'next/headers';
+import { processEnvConfig } from '@/lib/utils';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
@@ -31,22 +31,16 @@ function getResultSongs({ searchParams }: Props) {
 }
 
 export function generateMetadata({ searchParams }: Props) {
-  const apiUrl = process.env.API_URL;
-
-  if (!apiUrl) {
-    throw new Error('API_URL is not set');
-  }
-
   const unsungSongs = getResultSongs({ searchParams });
   return {
     openGraph: {
-      url: apiUrl,
+      url: processEnvConfig.apiUrl,
       title: '聴いたことがない曲一覧',
       siteName: '聴いたことがない曲一覧',
       type: 'article',
       images: {
         // 作ったAPIのURLを指定
-        url: `${apiUrl}/api/og?count=${unsungSongs.length}`,
+        url: `${processEnvConfig.apiUrl}/api/og?count=${unsungSongs.length}`,
         width: 1200,
         height: 630,
       },
@@ -62,17 +56,9 @@ export default function Home({ searchParams }: Props) {
     notFound();
   }
 
-  const headersList = headers();
-  const host = headersList.get('host');
   const pathname = '/result';
   const queryString = new URLSearchParams(searchParams).toString();
-  const prefix = process.env.HTTP_PREFIX;
-
-  if (!prefix) {
-    throw new Error('HTTP_PREFIX is not set');
-  }
-
-  const url = `${prefix + host + pathname}?${queryString}`;
+  const url = `${processEnvConfig.apiUrl + pathname}?${queryString}`;
 
   return (
     <div>
