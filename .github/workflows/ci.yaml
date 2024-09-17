@@ -1,0 +1,21 @@
+name: nextjs-ci
+
+on: push
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install dependencies
+        run: pnpm install
+      # - name: Run test
+      #   run: pnpm run test
+      - name: Run lint
+        run: pnpm run lint
