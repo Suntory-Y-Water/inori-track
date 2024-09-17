@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -8,8 +7,9 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
 } from '@/components/ui/alert-dialog';
+import { AlertDialogTitle } from '@radix-ui/react-alert-dialog';
 
-interface AlertDialogProps {
+type AlertDialogProps = {
   isOpen: boolean;
   onClose: () => void;
   onConfirm: () => void;
@@ -17,9 +17,9 @@ interface AlertDialogProps {
   description: string;
   okText: string;
   cancelText: string;
-}
+};
 
-const Popup: React.FC<AlertDialogProps> = ({
+export default function Popup({
   isOpen,
   onClose,
   onConfirm,
@@ -27,18 +27,19 @@ const Popup: React.FC<AlertDialogProps> = ({
   description,
   okText,
   cancelText,
-}) => (
-  <AlertDialog open={isOpen} onOpenChange={onClose}>
-    <AlertDialogContent>
-      <AlertDialogHeader>
-        <AlertDialogDescription>{description}</AlertDialogDescription>
-      </AlertDialogHeader>
-      <AlertDialogFooter>
-        <AlertDialogCancel onClick={onCancel}>{cancelText}</AlertDialogCancel>
-        <AlertDialogAction onClick={onConfirm}>{okText}</AlertDialogAction>
-      </AlertDialogFooter>
-    </AlertDialogContent>
-  </AlertDialog>
-);
-
-export default Popup;
+}: AlertDialogProps) {
+  return (
+    <AlertDialog open={isOpen} onOpenChange={onClose}>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>ネタバレ注意</AlertDialogTitle>
+          <AlertDialogDescription>{description}</AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel onClick={onCancel}>{cancelText}</AlertDialogCancel>
+          <AlertDialogAction onClick={onConfirm}>{okText}</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+}
