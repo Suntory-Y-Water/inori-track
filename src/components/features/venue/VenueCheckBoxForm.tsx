@@ -1,11 +1,11 @@
 'use client';
 import { useForm } from 'react-hook-form';
-import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
-import { Checkbox } from '@/components/ui/checkbox';
+import { Form, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
-import type { FormValues, LiveAndVenuesInfo } from '@/types';
+import type { FormValues, LiveAndVenuesInfo, Venue } from '@/types';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import CheckBoxList from '@/components/ui/CheckBoxForm';
 
 type Props = {
   params: LiveAndVenuesInfo[];
@@ -40,31 +40,13 @@ export default function VenueCheckBoxForm({ params }: Props) {
                 <div className='mt-4 mb-2'>
                   <FormLabel className='font-bold text-xl'>{param.liveName}</FormLabel>
                 </div>
-                {param.venues.map((venue, venueIndex) => (
-                  <FormField
-                    key={venue.id}
-                    control={form.control}
-                    name='items'
-                    render={({ field }) => (
-                      <FormItem
-                        key={venue.name}
-                        className='flex flex-row items-start space-x-3 space-y-0 py-1 pb-6'
-                      >
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value?.includes(venue.id)}
-                            onCheckedChange={(checked) =>
-                              checked
-                                ? field.onChange([...field.value, venue.id])
-                                : field.onChange(field.value?.filter((value) => value !== venue.id))
-                            }
-                          />
-                        </FormControl>
-                        <FormLabel className='font-normal'>{venue.name}</FormLabel>
-                      </FormItem>
-                    )}
-                  />
-                ))}
+                <CheckBoxList<Venue>
+                  form={form}
+                  name='items'
+                  items={param.venues}
+                  itemKey={(item) => item.id}
+                  itemLabel={(item) => item.name}
+                />
               </div>
             ))}
           </FormItem>

@@ -4633,8 +4633,3 @@ export const songsSung = [
     songId: '65',
   },
 ];
-
-export type SongsSungType = (typeof songsSung)[number];
-export type Venue = (typeof venues)[number];
-export type SongsType = (typeof songs)[number];
-export type LiveName = (typeof liveNames)[number];
