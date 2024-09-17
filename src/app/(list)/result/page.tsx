@@ -1,6 +1,6 @@
 import ResultInfo from '@/components/features/result/ResultInfo';
 import { songs, songsSung } from '@/data';
-import { processEnvConfig } from '@/lib/utils';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
@@ -9,6 +9,16 @@ type Props = {
     venue_id?: string;
   };
 };
+
+function currentUrl() {
+  const headersList = headers();
+  const host = headersList.get('host');
+  const prefix = process.env.HTTP_PREFIX;
+  if (!prefix) {
+    throw new Error('HTTP_PREFIX is not set');
+  }
+  return prefix + host;
+}
 
 function getResultSongs({ searchParams }: Props) {
   const venueIdsQuery = searchParams?.venue_id || '';
@@ -32,15 +42,16 @@ function getResultSongs({ searchParams }: Props) {
 
 export function generateMetadata({ searchParams }: Props) {
   const unsungSongs = getResultSongs({ searchParams });
+  const apiUrl = currentUrl();
   return {
     openGraph: {
-      url: processEnvConfig.apiUrl,
+      url: apiUrl,
       title: '聴いたことがない曲一覧',
       siteName: '聴いたことがない曲一覧',
       type: 'article',
       images: {
         // 作ったAPIのURLを指定
-        url: `${processEnvConfig.apiUrl}/api/og?count=${unsungSongs.length}`,
+        url: `${apiUrl}/api/og?count=${unsungSongs.length}`,
         width: 1200,
         height: 630,
       },
@@ -58,7 +69,8 @@ export default function Home({ searchParams }: Props) {
 
   const pathname = '/result';
   const queryString = new URLSearchParams(searchParams).toString();
-  const url = `${processEnvConfig.apiUrl + pathname}?${queryString}`;
+  const apiUrl = currentUrl();
+  const url = `${apiUrl + pathname}?${queryString}`;
 
   return (
     <div>
