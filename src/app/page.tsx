@@ -10,7 +10,7 @@ export default function Home() {
           <p className='text-lg'>
             いのなびはまだ水瀬いのりさんのライブで、まだ聴いたことのない曲を見つけることできるサービスです
           </p>
-          <p className='text-base mt-4'>
+          <p className='text-lg mt-4'>
             今すぐ始めるを押したあと、自分が参加したライブ名と会場名を選ぶことで、まだ聴いたことのない曲を一覧で表示することができます。
           </p>
           <Link href='/live'>

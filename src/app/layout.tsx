@@ -6,12 +6,24 @@ import Header from './Header';
 const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sui-portfolio.vercel.app/'),
   title: {
     template: '%s - いのなび',
     default: 'いのなび',
   },
   description:
     'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。',
+  openGraph: {
+    title: 'いのなび',
+    description:
+      'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。あなたがまだ聴いたことがない曲を見つけて、もっとライブを楽しみましょう',
+  },
+  twitter: {
+    title: 'いのなび',
+    description:
+      'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。あなたがまだ聴いたことがない曲を見つけて、もっとライブを楽しみましょう',
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({

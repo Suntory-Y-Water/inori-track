@@ -18,7 +18,6 @@ export default function VenueCheckBoxForm({ params }: Props) {
     },
   });
 
-  // TODO: ベストプラクティスはないか
   const router = useRouter();
 
   const handleButtonClick = (e: React.SyntheticEvent) => {
