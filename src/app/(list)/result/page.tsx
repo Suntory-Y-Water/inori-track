@@ -1,5 +1,7 @@
 import ResultInfo from '@/components/features/result/ResultInfo';
-import { songs, songsSung } from '@/data';
+import songs from '@/data/songs.json';
+import songsSung from '@/data/soungsSong.json';
+
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import React from 'react';

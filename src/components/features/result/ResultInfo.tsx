@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { songs } from '@/data';
+import songs from '@/data/songs.json';
 
 type Props = {
   params: {
@@ -45,7 +45,9 @@ export default function ResultInfo({ params, url }: Props) {
         </Link>
         <div className='mt-4 text-sm'>
           <p>
-            ※コンテンツブロッカー(広告ブロッカー)を使用している場合、X(Twitter)への共有機能が制限されることがあります。
+            コンテンツブロッカー(広告ブロッカー)を使用している場合、
+            <br />
+            X(Twitter)への共有機能が制限されることがあります。
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
-import { venues, liveNames } from '@/data';
+import liveNames from '@/data/liveNames.json';
+import venues from '@/data/venues.json';
 import type { LiveAndVenuesInfo } from '@/types';
 import VenueCheckBoxForm from '@/components/features/venue/VenueCheckBoxForm';
 import { notFound } from 'next/navigation';
