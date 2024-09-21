@@ -35,9 +35,7 @@ export default function RootLayout({
     <html lang='ja'>
       <body className={notoSansJp.className}>
         <Header />
-        <main className='mx-auto w-[calc(100%-40px)] max-w-[720px] my-8 text-baseblack'>
-          {children}
-        </main>
+        <main className='mx-auto w-full px-4 max-w-[768px] py-6 text-baseblack'>{children}</main>
       </body>
     </html>
   );

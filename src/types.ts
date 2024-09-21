@@ -12,3 +12,14 @@ export type LiveAndVenuesInfo = {
     name: string;
   }[];
 };
+
+export type LiveName = {
+  id: string;
+  name: string;
+  liveType: string;
+};
+
+export type Venue = {
+  id: string;
+  name: string;
+};
