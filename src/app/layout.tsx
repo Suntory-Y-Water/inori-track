@@ -17,12 +17,14 @@ export const metadata: Metadata = {
     title: 'いのなび',
     description:
       'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。あなたがまだ聴いたことがない曲を見つけて、もっとライブを楽しみましょう',
+    images: '/opengraph-image.png',
   },
   twitter: {
     title: 'いのなび',
     description:
       'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。あなたがまだ聴いたことがない曲を見つけて、もっとライブを楽しみましょう',
     card: 'summary_large_image',
+    images: '/opengraph-image.png',
   },
 };
 
