@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -11,8 +10,7 @@ export default function Header() {
           className='flex items-center space-x-2 duration-300 hover:-translate-y-0.5'
           aria-label='最初の画面に戻る'
         >
-          <Image src='/favicon.ico' width={40} height={40} alt='icon' className='rounded-full' />
-          <span className='text-2xl font-bold text-primary-foreground'>いのなび</span>
+          <h1 className='text-2xl font-bold text-primary-foreground'>いのなび</h1>
         </Link>
       </div>
     </header>
