@@ -36,18 +36,20 @@ export default function VenueCheckBoxForm({ params }: Props) {
         render={() => (
           <FormItem>
             {params.map((param) => (
-              <div key={param.liveName}>
-                <div className='mt-4 mb-2'>
-                  <FormLabel className='font-bold text-xl'>{param.liveName}</FormLabel>
+              <fieldset key={param.liveName} aria-label={param.liveName}>
+                <div key={param.liveName}>
+                  <div className='mt-4 mb-2'>
+                    <FormLabel className='font-bold text-xl'>{param.liveName}</FormLabel>
+                  </div>
+                  <CheckBoxList<Venue>
+                    form={form}
+                    name='items'
+                    items={param.venues}
+                    itemKey={(item) => item.id}
+                    itemLabel={(item) => item.name}
+                  />
                 </div>
-                <CheckBoxList<Venue>
-                  form={form}
-                  name='items'
-                  items={param.venues}
-                  itemKey={(item) => item.id}
-                  itemLabel={(item) => item.name}
-                />
-              </div>
+              </fieldset>
             ))}
           </FormItem>
         )}
