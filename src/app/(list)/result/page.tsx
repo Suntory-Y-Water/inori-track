@@ -1,6 +1,8 @@
+export const dynamic = 'force-dynamic';
+
 import ResultInfo from '@/components/features/result/ResultInfo';
 import songs from '@/data/songs.json';
-import songsSung from '@/data/soungsSong.json';
+import { getResultSongs } from '@/lib/utils';
 
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
@@ -11,34 +13,17 @@ type Props = {
   };
 };
 
-function currentUrl() {
+function currentUrl(): string {
   const headersList = headers();
   const host = headersList.get('host');
+  if (!host) {
+    throw new Error('host is not defined');
+  }
   const prefix = process.env.HTTP_PREFIX;
   if (!prefix) {
     throw new Error('HTTP_PREFIX is not set');
   }
   return prefix + host;
-}
-
-function getResultSongs({ searchParams }: Props) {
-  const venueIdsQuery = searchParams?.venue_id || '';
-
-  // クエリパラメータが設定されていない場合は、404 ページを表示
-  if (!venueIdsQuery) {
-    notFound();
-  }
-
-  // venue_id をカンマで区切って配列に変換
-  const venueIds = venueIdsQuery.split(',');
-
-  const sungSongIds = songsSung
-    .filter((songSung) => venueIds.includes(songSung.venueId))
-    .map((songSung) => songSung.songId);
-
-  const uniqueSungSongIds = Array.from(new Set(sungSongIds));
-  const unsungSongs = songs.filter((song) => !uniqueSungSongIds.includes(song.id));
-  return unsungSongs;
 }
 
 export function generateMetadata({ searchParams }: Props) {

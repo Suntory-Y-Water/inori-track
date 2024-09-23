@@ -1,8 +1,7 @@
-
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import songs from '@/data/songs.json';
 import Confetti from '@/components/ui/confetti';
+import songs from '@/data/songs.json';
+import Link from 'next/link';
 
 type Props = {
   params: {
