@@ -4,7 +4,6 @@ import songsSung from '@/data/soungsSong.json';
 
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
-import React from 'react';
 
 type Props = {
   searchParams?: {

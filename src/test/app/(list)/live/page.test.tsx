@@ -1,9 +1,8 @@
-import React from 'react';
-import { expect, describe, it, beforeEach } from 'vitest';
-import { render, screen, fireEvent, within } from '@testing-library/react';
-import { vi } from 'vitest';
 import LiveCheckBoxForm from '@/components/features/live/LiveCheckBoxForm';
 import liveNames from '@/data/liveNames.json';
+import { fireEvent, render, screen, within } from '@testing-library/react';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { vi } from 'vitest';
 
 // モック関数を作成
 const pushMock = vi.fn();
