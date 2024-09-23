@@ -76,7 +76,11 @@ export default function Home({ searchParams }: Props) {
 
   return (
     <div>
-      <h1 className='pb-4 font-bold text-2xl'>聴いたことない曲一覧</h1>
+      {unsungSongs.length === 0 ? (
+        ''
+      ) : (
+        <h1 className='pb-4 font-bold text-2xl'>聴いたことない曲一覧</h1>
+      )}
       <ResultInfo params={unsungSongs} url={url} />
     </div>
   );
