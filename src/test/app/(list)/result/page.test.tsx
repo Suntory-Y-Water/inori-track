@@ -4,10 +4,7 @@ import { getResultSongs } from '@/lib/utils';
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-// notFound関数をモック
 const notFoundMock = vi.fn();
-
-// next/navigationのnotFoundをモック
 vi.mock('next/navigation', () => ({
   notFound: () => ({
     push: notFoundMock,

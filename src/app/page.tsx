@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import liveNames from '@/data/liveNames.json';
+import Link from 'next/link';
 
 export default function Home() {
   return (
