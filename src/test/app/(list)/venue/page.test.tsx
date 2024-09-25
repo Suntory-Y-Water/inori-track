@@ -1,7 +1,7 @@
-import { render, screen, fireEvent, within } from '@testing-library/react';
-import { expect, describe, it, beforeEach, vi } from 'vitest';
 import VenueCheckBoxForm from '@/components/features/venue/VenueCheckBoxForm';
 import type { LiveAndVenuesInfo } from '@/types';
+import { fireEvent, render, screen, within } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // モック関数を作成
 const pushMock = vi.fn();

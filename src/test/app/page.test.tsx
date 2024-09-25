@@ -1,7 +1,7 @@
-import { expect, describe, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
 import Home from '@/app/page';
 import liveNames from '@/data/liveNames.json';
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 describe('page tests', () => {
   it('ページがレンダリングされる', () => {
