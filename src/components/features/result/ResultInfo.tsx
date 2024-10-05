@@ -28,7 +28,7 @@ export default function ResultInfo({ params, url }: Props) {
         </h2>
       </div>
       {params.map((param) => (
-        <ul key={param.id} className='list-disc list-outside mt-1 ml-6 py-1'>
+        <ul key={param.id} className='list-disc list-outside mt-1 ml-6'>
           <li className='marker:text-primary'>{param.title}</li>
         </ul>
       ))}

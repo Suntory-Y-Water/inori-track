@@ -1,6 +1,6 @@
+import songs from '@/data/songs.json';
 import { ImageResponse } from 'next/og';
 import type { NextRequest } from 'next/server';
-import songs from '@/data/songs.json';
 import { z } from 'zod';
 
 export const runtime = 'edge';
