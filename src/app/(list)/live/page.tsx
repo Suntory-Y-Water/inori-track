@@ -1,7 +1,6 @@
 import LiveCheckBoxForm from '@/components/features/live/LiveCheckBoxForm';
 import liveNames from '@/data/liveNames.json';
 import type { LiveName } from '@/types';
-import React from 'react';
 
 export default function page() {
   const lives: LiveName[] = liveNames;

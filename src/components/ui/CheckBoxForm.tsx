@@ -1,5 +1,5 @@
-import { FormField, FormItem, FormControl, FormLabel } from '@/components/ui/form';
 import { Checkbox } from '@/components/ui/checkbox';
+import { FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import type { UseFormReturn } from 'react-hook-form';
 
 type FormValues = {
@@ -40,7 +40,7 @@ export default function CheckBoxList<TItem>({
                   }
                 />
               </FormControl>
-              <FormLabel className='text-base font-normal'>{itemLabel(item)}</FormLabel>
+              <FormLabel>{itemLabel(item)}</FormLabel>
             </FormItem>
           )}
         />

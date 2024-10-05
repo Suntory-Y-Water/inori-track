@@ -1,7 +1,7 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import Confetti from '@/components/ui/confetti';
 import songs from '@/data/songs.json';
+import Link from 'next/link';
 
 type Props = {
   params: {
@@ -12,17 +12,23 @@ type Props = {
 };
 
 export default function ResultInfo({ params, url }: Props) {
-  const tweetText = `あなたが聴いたことのない曲は${songs.length}曲中${params.length}曲でした!\r\n${url}\r\n#いのなび`;
+  const tweetText =
+    params.length === 0
+      ? `全ての曲をライブで聴きました！🎉\r\n${url}\r\n#いのなび`
+      : `あなたが聴いたことのない曲は${songs.length}曲中、${params.length}曲でした！\r\n${url}\r\n#いのなび`;
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+
   return (
     <div>
       <div className='mt-4 mb-2'>
         <h2 className='font-bold text-xl'>
-          あなたが聴いたことのない曲は{songs.length}曲中、{params.length}曲でした！
+          {params.length === 0
+            ? '全ての曲をライブで聴きました！おめでとうございます🎉'
+            : `あなたが聴いたことのない曲は${songs.length}曲中、${params.length}曲でした！`}
         </h2>
       </div>
       {params.map((param) => (
-        <ul key={param.id} className='list-disc list-outside mt-1 ml-6 py-1'>
+        <ul key={param.id} className='list-disc list-outside mt-1 ml-6'>
           <li className='marker:text-primary'>{param.title}</li>
         </ul>
       ))}
@@ -43,13 +49,7 @@ export default function ResultInfo({ params, url }: Props) {
             最初に戻る
           </Button>
         </Link>
-        <div className='mt-4 text-sm'>
-          <p>
-            コンテンツブロッカー(広告ブロッカー)を使用している場合、
-            <br />
-            X(Twitter)への共有機能が制限されることがあります。
-          </p>
-        </div>
+        {params.length === 0 && <Confetti />}
       </div>
     </div>
   );
