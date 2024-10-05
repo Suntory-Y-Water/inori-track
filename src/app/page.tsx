@@ -7,10 +7,10 @@ export default function Home() {
     <div className='relative min-h-screen flex flex-col'>
       <div className='flex flex-col flex-1'>
         <div className='flex flex-col'>
-          <p className='text-lg py-2'>
+          <p className='py-2'>
             いのなびはまだ水瀬いのりさんのライブで、まだ聴いたことのない曲を見つけることできるサービスです
           </p>
-          <p className='text-lg py-2'>
+          <p className='py-2'>
             今すぐ始めるを押したあと、自分が参加したライブ名と会場名を選ぶことで、まだ聴いたことのない曲を一覧で表示することができます。
           </p>
           <Link href='/live'>
@@ -22,14 +22,14 @@ export default function Home() {
         <div className='w-full bg-white rounded-t-3xl flex-1'>
           <h1 className='text-xl md:text-2xl font-bold text-primary-foreground'>よくある質問</h1>
           <div className='py-2'>
-            <h2 className='text-lg font-semibold'>Q. ネタバレは含みますか？</h2>
+            <strong>Q. ネタバレは含みますか？</strong>
             <p className='py-1'>
               A.
               一部会場(ライブツアー期間中)であれば、ネタバレを含む場合がございますが、必ず確認メッセージが表示されます。
             </p>
           </div>
           <div className='py-2'>
-            <h2 className='text-lg font-semibold'>Q. 対象のライブを教えてください。</h2>
+            <strong>Q. 対象のライブを教えてください。</strong>
             <p className='py-1'>
               現在(2024年9月16日時点)は以下のライブ、町民集会が対象になっております。
             </p>

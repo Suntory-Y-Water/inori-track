@@ -58,6 +58,14 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+  p,
+  li,
+  label {
+    line-height: 2;
+    font-weight: 500;
+    letter-spacing: .16px; /* 文字の感覚を調整する*/
+  }
 }
 
 @layer components {
