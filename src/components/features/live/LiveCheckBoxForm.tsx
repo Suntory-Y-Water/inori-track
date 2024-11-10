@@ -1,15 +1,15 @@
 'use client';
 
+import CheckBoxList from '@/components/ui/CheckBoxForm';
+import { Button } from '@/components/ui/button';
+import { Form, FormItem, FormLabel } from '@/components/ui/form';
+import Popup from '@/components/ui/popup';
+import type { FormValues, LiveName } from '@/types';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import type React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Form, FormItem, FormLabel } from '@/components/ui/form';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import Popup from '@/components/ui/popup';
-import type { FormValues, LiveName } from '@/types';
-import { useRouter } from 'next/navigation';
-import CheckBoxList from '@/components/ui/CheckBoxForm';
 
 type Props = {
   params: LiveName[];
@@ -26,20 +26,11 @@ export default function LiveCheckBoxForm({ params }: Props) {
     },
   });
 
-  const handleButtonClick = (e: React.SyntheticEvent) => {
+  function handleButtonClick(e: React.SyntheticEvent) {
     e.preventDefault();
     const selectedItems = form.watch('items');
-    // ネタバレ防止対象のライブが選択されているかチェック
-    const hasAcousticLive = selectedItems.includes('live-tour-2024-heart-bookmark');
-
-    if (hasAcousticLive) {
-      // ネタバレ防止対象のライブが選択されていた場合、Popup を表示
-      setAlertDialogOpen(true);
-    } else {
-      // 選択されていない場合は通常の処理を実行
-      proceedWithNavigation(selectedItems);
-    }
-  };
+    proceedWithNavigation(selectedItems);
+  }
 
   // 選択されたアイテムでナビゲーションを実行する関数
   function proceedWithNavigation(selectedItems: string[]) {
