@@ -33,7 +33,7 @@ export default function Home() {
             <p className='py-1'>
               現在(2024年9月16日時点)は以下のライブ、町民集会が対象になっております。
             </p>
-            <ul className='list-disc list-outside mt-1 ml-6 text-left'>
+            <ul className='list-disc list-outside ml-6'>
               {liveNames.map((liveName) => (
                 <li key={liveName.id} className='py-2 marker:text-primary'>
                   {liveName.name}

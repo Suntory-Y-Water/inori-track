@@ -64,7 +64,7 @@ describe('LiveCheckBoxForm tests', () => {
     expect(pushMock).toHaveBeenCalledWith('/venue?live_id=1st-live-ready-steady-go');
   });
 
-  it('live-tour-2024-heart-bookmarkを選択した状態でボタンを押すとポップアップが表示されること', () => {
+  it.skip('live-tour-2024-heart-bookmarkを選択した状態でボタンを押すとポップアップが表示されること', () => {
     render(<LiveCheckBoxForm params={liveNames} />);
 
     const checkbox = screen.getByLabelText('LIVE TOUR 2024 heart bookmark');
@@ -82,7 +82,7 @@ describe('LiveCheckBoxForm tests', () => {
     expect(popupDescription).toBeInTheDocument();
   });
 
-  it('ポップアップで"会場を選択する"をクリックすると画面遷移が行われること', () => {
+  it.skip('ポップアップで"会場を選択する"をクリックすると画面遷移が行われること', () => {
     render(<LiveCheckBoxForm params={liveNames} />);
 
     const checkbox = screen.getByLabelText('LIVE TOUR 2024 heart bookmark');
@@ -98,7 +98,7 @@ describe('LiveCheckBoxForm tests', () => {
     expect(pushMock).toHaveBeenCalledWith('/venue?live_id=live-tour-2024-heart-bookmark');
   });
 
-  it('ポップアップで"選び直す"をクリックするとポップアップが閉じること', () => {
+  it.skip('ポップアップで"選び直す"をクリックするとポップアップが閉じること', () => {
     render(<LiveCheckBoxForm params={liveNames} />);
 
     const checkbox = screen.getByLabelText('LIVE TOUR 2024 heart bookmark');

@@ -208,5 +208,30 @@
     "id": "42",
     "name": "広島",
     "liveNameId": "live-tour-2024-heart-bookmark"
+  },
+  {
+    "id": "43",
+    "name": "愛知",
+    "liveNameId": "live-tour-2024-heart-bookmark"
+  },
+  {
+    "id": "44",
+    "name": "福岡",
+    "liveNameId": "live-tour-2024-heart-bookmark"
+  },
+  {
+    "id": "45",
+    "name": "北海道",
+    "liveNameId": "live-tour-2024-heart-bookmark"
+  },
+  {
+    "id": "46",
+    "name": "千葉1日目",
+    "liveNameId": "live-tour-2024-heart-bookmark"
+  },
+  {
+    "id": "47",
+    "name": "千葉2日目",
+    "liveNameId": "live-tour-2024-heart-bookmark"
   }
 ]
