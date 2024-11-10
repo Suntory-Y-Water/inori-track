@@ -15,8 +15,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    # releaseブランチにマージされたPRのみを対象とする
-    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'release')
+    # developブランチからマージされたPRのみを対象とする
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'develop')
     runs-on: ubuntu-latest
     steps:
       - name: Create Release Tag And Note
