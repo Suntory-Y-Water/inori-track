@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sui-portfolio.vercel.app/'),
+  metadataBase: new URL('https://inori-track.vercel.app/'),
   title: {
     template: '%s - いのなび',
     default: 'いのなび',
