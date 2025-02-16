@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Header from './Header';
 import Footer from './Footer';
+import Header from './Header';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sui-portfolio.vercel.app/'),
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     title: 'いのなび',
     description:
       'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。あなたがまだ聴いたことがない曲を見つけて、もっとライブを楽しみましょう',
-    images: '/opengraph-image.png',
+    images: '/opengraph-image.png?timestamp=20250216',
   },
   twitter: {
     title: 'いのなび',
     description:
       'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。あなたがまだ聴いたことがない曲を見つけて、もっとライブを楽しみましょう',
     card: 'summary_large_image',
-    images: '/opengraph-image.png',
+    images: '/opengraph-image.png?timestamp=20250216',
   },
 };
 

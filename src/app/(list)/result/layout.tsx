@@ -5,7 +5,7 @@ type Props = {
 };
 
 export const metadata: Metadata = {
-  title: '聴いたことない曲',
+  title: '聴いたことがない曲一覧',
   description: 'あなたがまだライブで聴いたことがない曲を一覧で表示します。',
 };
 
