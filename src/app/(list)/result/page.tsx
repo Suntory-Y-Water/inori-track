@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import ResultInfo from '@/components/features/result/ResultInfo';
 import songs from '@/data/songs.json';
 import { getResultSongs } from '@/lib/utils';
+import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 
@@ -25,16 +26,25 @@ async function currentUrl(): Promise<string> {
   return prefix + host;
 }
 
-export async function generateMetadata({ searchParams }: Props) {
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const params = await searchParams;
   const unsungSongs = getResultSongs({ searchParams: params });
   const apiUrl = await currentUrl();
   return {
     openGraph: {
       url: apiUrl,
-      title: '聴いたことがない曲一覧',
-      siteName: '聴いたことがない曲一覧',
       type: 'article',
+      images: {
+        // 作ったAPIのURLを指定
+        url: `${apiUrl}/api/og?count=${unsungSongs.length}`,
+        width: 1200,
+        height: 630,
+      },
+    },
+    twitter: {
+      description:
+        'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。',
+      card: 'summary_large_image',
       images: {
         // 作ったAPIのURLを指定
         url: `${apiUrl}/api/og?count=${unsungSongs.length}`,
