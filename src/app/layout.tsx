@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
 import Header from './Header';
-
-const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] });
+import Footer from './Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sui-portfolio.vercel.app/'),
@@ -35,9 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={notoSansJp.className}>
+      <body>
         <Header />
         <main className='mx-auto w-full px-4 max-w-[768px] py-6 text-baseblack'>{children}</main>
+        <Footer />
       </body>
     </html>
   );
