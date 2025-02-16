@@ -3,18 +3,17 @@ export const dynamic = 'force-dynamic';
 import ResultInfo from '@/components/features/result/ResultInfo';
 import songs from '@/data/songs.json';
 import { getResultSongs } from '@/lib/utils';
-
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 type Props = {
-  searchParams?: {
+  searchParams?: Promise<{
     venue_id?: string;
-  };
+  }>;
 };
 
-function currentUrl(): string {
-  const headersList = headers();
+async function currentUrl(): Promise<string> {
+  const headersList = await headers();
   const host = headersList.get('host');
   if (!host) {
     throw new Error('host is not defined');
@@ -26,9 +25,10 @@ function currentUrl(): string {
   return prefix + host;
 }
 
-export function generateMetadata({ searchParams }: Props) {
-  const unsungSongs = getResultSongs({ searchParams });
-  const apiUrl = currentUrl();
+export async function generateMetadata({ searchParams }: Props) {
+  const params = await searchParams;
+  const unsungSongs = getResultSongs({ searchParams: params });
+  const apiUrl = await currentUrl();
   return {
     openGraph: {
       url: apiUrl,
@@ -45,17 +45,18 @@ export function generateMetadata({ searchParams }: Props) {
   };
 }
 
-export default function Home({ searchParams }: Props) {
-  const unsungSongs = getResultSongs({ searchParams });
-  // クエリパラメータが設定されているが、該当するライブがない場合は、404 ページを表示
-  // 1回もライブに参加していない場合(そもそも直アクセスや不正なパラメータの場合にしか発生しない)、404 ページを表示
+export default async function Home({ searchParams }: Props) {
+  const params = await searchParams;
+  const unsungSongs = getResultSongs({ searchParams: params });
+  // クエリパラメータが設定されているが、該当するライブがない場合は404ページを表示
   if (unsungSongs.length === songs.length) {
     notFound();
   }
 
   const pathname = '/result';
-  const queryString = new URLSearchParams(searchParams).toString();
-  const apiUrl = currentUrl();
+  // 解決済みの params を使用してクエリ文字列を作成
+  const queryString = new URLSearchParams(params).toString();
+  const apiUrl = await currentUrl();
   const url = `${apiUrl + pathname}?${queryString}`;
 
   return (

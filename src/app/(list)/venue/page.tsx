@@ -6,22 +6,23 @@ import venues from '@/data/venues.json';
 import type { LiveAndVenuesInfo } from '@/types';
 import { notFound } from 'next/navigation';
 
-type props = {
-  searchParams?: {
+type Props = {
+  searchParams?: Promise<{
     live_id: string;
-  };
+  }>;
 };
 
-export default async function Home({ searchParams }: props) {
-  const liveId = searchParams?.live_id || '';
-  // クエリパラメータが設定されていない場合は、404 ページを表示
+export default async function Home({ searchParams }: Props) {
+  const params = await searchParams;
+  const liveId = params?.live_id || '';
+  // クエリパラメータが設定されていない場合は404ページを表示
   if (!liveId) {
     notFound();
   }
 
   const lives = liveNames.filter((live) => liveId.includes(live.id));
 
-  // クエリパラメータが設定されているが、該当するライブがない場合は、404 ページを表示
+  // クエリパラメータが設定されているが、該当するライブがない場合は404ページを表示
   if (lives.length === 0) {
     notFound();
   }
