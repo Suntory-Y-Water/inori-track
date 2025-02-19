@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang='ja'>
       <body>
         <Header />
-        <main className='mx-auto w-full px-4 max-w-[768px] py-6 text-baseblack'>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>

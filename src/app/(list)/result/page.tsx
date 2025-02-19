@@ -64,7 +64,6 @@ export default async function Home({ searchParams }: Props) {
   }
 
   const pathname = '/result';
-  // 解決済みの params を使用してクエリ文字列を作成
   const queryString = new URLSearchParams(params).toString();
   const apiUrl = await currentUrl();
   const url = `${apiUrl + pathname}?${queryString}`;
