@@ -1,4 +1,4 @@
-import Home from '@/app/page';
+import Home from '@/app/(list)/page';
 import liveNames from '@/data/liveNames.json';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';

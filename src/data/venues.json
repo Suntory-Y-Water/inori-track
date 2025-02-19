@@ -2,236 +2,330 @@
   {
     "id": "1",
     "name": "東京",
-    "liveNameId": "1st-live-ready-steady-go"
+    "liveNameId": "1st-live-ready-steady-go",
+    "shortId": "rsgTokyo",
+    "shortName": "RSG東京"
   },
   {
     "id": "2",
     "name": "愛知",
-    "liveNameId": "live-tour-2018-blue-compass"
+    "liveNameId": "live-tour-2018-blue-compass",
+    "shortId": "bcAichi",
+    "shortName": "BC愛知"
   },
   {
     "id": "3",
     "name": "石川",
-    "liveNameId": "live-tour-2018-blue-compass"
+    "liveNameId": "live-tour-2018-blue-compass",
+    "shortId": "bcIshikawa",
+    "shortName": "BC石川"
   },
   {
     "id": "4",
     "name": "兵庫",
-    "liveNameId": "live-tour-2018-blue-compass"
+    "liveNameId": "live-tour-2018-blue-compass",
+    "shortId": "bcHyogo",
+    "shortName": "BC兵庫"
   },
   {
     "id": "5",
     "name": "千葉",
-    "liveNameId": "live-tour-2018-blue-compass"
+    "liveNameId": "live-tour-2018-blue-compass",
+    "shortId": "bcChiba",
+    "shortName": "BC千葉"
   },
   {
     "id": "6",
     "name": "大阪",
-    "liveNameId": "live-tour-2019-catch-the-rainbow"
+    "liveNameId": "live-tour-2019-catch-the-rainbow",
+    "shortId": "ctrOsaka",
+    "shortName": "CtR大阪"
   },
   {
     "id": "7",
     "name": "愛知",
-    "liveNameId": "live-tour-2019-catch-the-rainbow"
+    "liveNameId": "live-tour-2019-catch-the-rainbow",
+    "shortId": "ctrAichi",
+    "shortName": "CtR愛知"
   },
   {
     "id": "8",
     "name": "東京1日目",
-    "liveNameId": "live-tour-2019-catch-the-rainbow"
+    "liveNameId": "live-tour-2019-catch-the-rainbow",
+    "shortId": "ctrTokyo1",
+    "shortName": "CtR東京1日目"
   },
   {
     "id": "9",
     "name": "東京2日目",
-    "liveNameId": "live-tour-2019-catch-the-rainbow"
+    "liveNameId": "live-tour-2019-catch-the-rainbow",
+    "shortId": "ctrTokyo2",
+    "shortName": "CtR東京2日目"
   },
   {
     "id": "10",
     "name": "神奈川",
-    "liveNameId": "5th-anniversary-live-starry-wishes"
+    "liveNameId": "5th-anniversary-live-starry-wishes",
+    "shortId": "sw",
+    "shortName": "SW"
   },
   {
     "id": "11",
     "name": "大阪",
-    "liveNameId": "live-tour-2021-hello-horizon"
+    "liveNameId": "live-tour-2021-hello-horizon",
+    "shortId": "hhOsaka",
+    "shortName": "HH大阪"
   },
   {
     "id": "12",
     "name": "愛知",
-    "liveNameId": "live-tour-2021-hello-horizon"
+    "liveNameId": "live-tour-2021-hello-horizon",
+    "shortId": "hhAichi",
+    "shortName": "HH愛知"
   },
   {
     "id": "13",
     "name": "福岡",
-    "liveNameId": "live-tour-2021-hello-horizon"
+    "liveNameId": "live-tour-2021-hello-horizon",
+    "shortId": "hhFukuoka",
+    "shortName": "HH福岡"
   },
   {
     "id": "14",
     "name": "宮城",
-    "liveNameId": "live-tour-2021-hello-horizon"
+    "liveNameId": "live-tour-2021-hello-horizon",
+    "shortId": "hhMiyagi",
+    "shortName": "HH宮城"
   },
   {
     "id": "15",
     "name": "神奈川",
-    "liveNameId": "live-tour-2021-hello-horizon"
+    "liveNameId": "live-tour-2021-hello-horizon",
+    "shortId": "hhKanagawa",
+    "shortName": "HH神奈川"
   },
   {
     "id": "16",
     "name": "愛知",
-    "liveNameId": "live-tour-2022-glow"
+    "liveNameId": "live-tour-2022-glow",
+    "shortId": "glowAichi",
+    "shortName": "glow愛知"
   },
   {
     "id": "17",
     "name": "宮城",
-    "liveNameId": "live-tour-2022-glow"
+    "liveNameId": "live-tour-2022-glow",
+    "shortId": "glowMiyagi",
+    "shortName": "glow宮城"
   },
   {
     "id": "18",
     "name": "福岡",
-    "liveNameId": "live-tour-2022-glow"
+    "liveNameId": "live-tour-2022-glow",
+    "shortId": "glowFukuoka",
+    "shortName": "glow福岡"
   },
   {
     "id": "19",
     "name": "神奈川",
-    "liveNameId": "live-tour-2022-glow"
+    "liveNameId": "live-tour-2022-glow",
+    "shortId": "glowKanagawa",
+    "shortName": "glow神奈川"
   },
   {
     "id": "20",
     "name": "兵庫",
-    "liveNameId": "live-tour-2022-glow"
+    "liveNameId": "live-tour-2022-glow",
+    "shortId": "glowHyogo",
+    "shortName": "glow兵庫"
   },
   {
     "id": "21",
     "name": "兵庫",
-    "liveNameId": "live-tour-2023-scrap-art"
+    "liveNameId": "live-tour-2023-scrap-art",
+    "shortId": "saHyogo",
+    "shortName": "SA兵庫"
   },
   {
     "id": "22",
     "name": "宮城",
-    "liveNameId": "live-tour-2023-scrap-art"
+    "liveNameId": "live-tour-2023-scrap-art",
+    "shortId": "saMiyagi",
+    "shortName": "SA宮城"
   },
   {
     "id": "23",
     "name": "愛知",
-    "liveNameId": "live-tour-2023-scrap-art"
+    "liveNameId": "live-tour-2023-scrap-art",
+    "shortId": "saAichi",
+    "shortName": "SA愛知"
   },
   {
     "id": "24",
     "name": "福岡",
-    "liveNameId": "live-tour-2023-scrap-art"
+    "liveNameId": "live-tour-2023-scrap-art",
+    "shortId": "saFukuoka",
+    "shortName": "SA福岡"
   },
   {
     "id": "25",
     "name": "神奈川1日目",
-    "liveNameId": "live-tour-2023-scrap-art"
+    "liveNameId": "live-tour-2023-scrap-art",
+    "shortId": "saKanagawa1",
+    "shortName": "SA神奈川1日目"
   },
   {
     "id": "26",
     "name": "神奈川2日目",
-    "liveNameId": "live-tour-2023-scrap-art"
+    "liveNameId": "live-tour-2023-scrap-art",
+    "shortId": "saKanagawa2",
+    "shortName": "SA神奈川2日目"
   },
   {
     "id": "27",
     "name": "東京昼公演",
-    "liveNameId": "inorimachi-town-meeting-2018"
+    "liveNameId": "inorimachi-town-meeting-2018",
+    "shortId": "chomin2018TokyoDay",
+    "shortName": "町民18東京昼"
   },
   {
     "id": "28",
     "name": "東京夜公演",
-    "liveNameId": "inorimachi-town-meeting-2018"
+    "liveNameId": "inorimachi-town-meeting-2018",
+    "shortId": "chomin2018TokyoNight",
+    "shortName": "町民18東京夜"
   },
   {
     "id": "29",
     "name": "兵庫昼公演",
-    "liveNameId": "inorimachi-town-meeting-2019"
+    "liveNameId": "inorimachi-town-meeting-2019",
+    "shortId": "chomin2019HyogoDay",
+    "shortName": "町民19兵庫昼"
   },
   {
     "id": "30",
     "name": "兵庫夜公演",
-    "liveNameId": "inorimachi-town-meeting-2019"
+    "liveNameId": "inorimachi-town-meeting-2019",
+    "shortId": "chomin2019HyogoNight",
+    "shortName": "町民19兵庫夜"
   },
   {
     "id": "31",
     "name": "東京昼公演",
-    "liveNameId": "inorimachi-town-meeting-2019"
+    "liveNameId": "inorimachi-town-meeting-2019",
+    "shortId": "chomin2019TokyoDay",
+    "shortName": "町民19東京昼"
   },
   {
     "id": "32",
     "name": "東京夜公演",
-    "liveNameId": "inorimachi-town-meeting-2019"
+    "liveNameId": "inorimachi-town-meeting-2019",
+    "shortId": "chomin2019TokyoNight",
+    "shortName": "町民19東京夜"
   },
   {
     "id": "33",
     "name": "横浜昼公演",
-    "liveNameId": "inorimachi-town-meeting-2021-second-helping"
+    "liveNameId": "inorimachi-town-meeting-2021-second-helping",
+    "shortId": "chomin2021YokohamaDay",
+    "shortName": "町民21横浜昼"
   },
   {
     "id": "34",
     "name": "横浜夜公演",
-    "liveNameId": "inorimachi-town-meeting-2021-second-helping"
+    "liveNameId": "inorimachi-town-meeting-2021-second-helping",
+    "shortId": "chomin2021YokohamaNight",
+    "shortName": "町民21横浜夜"
   },
   {
     "id": "35",
     "name": "東京昼公演",
-    "liveNameId": "inorimachi-town-meeting-2023"
+    "liveNameId": "inorimachi-town-meeting-2023",
+    "shortId": "chomin2023TokyoDay",
+    "shortName": "町民23東京昼"
   },
   {
     "id": "36",
     "name": "東京夜公演",
-    "liveNameId": "inorimachi-town-meeting-2023"
+    "liveNameId": "inorimachi-town-meeting-2023",
+    "shortId": "chomin2023TokyoNight",
+    "shortName": "町民23東京夜"
   },
   {
     "id": "37",
     "name": "埼玉昼公演",
-    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-"
+    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-",
+    "shortId": "chomin2024SaitamaDay",
+    "shortName": "町民24埼玉昼"
   },
   {
     "id": "38",
     "name": "埼玉夜公演",
-    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-"
+    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-",
+    "shortId": "chomin2024SaitamaNight",
+    "shortName": "町民24埼玉夜"
   },
   {
     "id": "39",
     "name": "滋賀",
-    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-"
+    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-",
+    "shortId": "chomin2024Shiga",
+    "shortName": "町民24滋賀"
   },
   {
     "id": "40",
     "name": "愛知",
-    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-"
+    "liveNameId": "inorimachi-town-meeting-2024-acoustic-live-wonder-caravan!-",
+    "shortId": "chomin2024Aichi",
+    "shortName": "町民24愛知"
   },
   {
     "id": "41",
     "name": "兵庫",
-    "liveNameId": "live-tour-2024-heart-bookmark"
+    "liveNameId": "live-tour-2024-heart-bookmark",
+    "shortId": "hbHyogo",
+    "shortName": "HB兵庫"
   },
   {
     "id": "42",
     "name": "広島",
-    "liveNameId": "live-tour-2024-heart-bookmark"
+    "liveNameId": "live-tour-2024-heart-bookmark",
+    "shortId": "hbHiroshima",
+    "shortName": "HB広島"
   },
   {
     "id": "43",
     "name": "愛知",
-    "liveNameId": "live-tour-2024-heart-bookmark"
+    "liveNameId": "live-tour-2024-heart-bookmark",
+    "shortId": "hbAichi",
+    "shortName": "HB愛知"
   },
   {
     "id": "44",
     "name": "福岡",
-    "liveNameId": "live-tour-2024-heart-bookmark"
+    "liveNameId": "live-tour-2024-heart-bookmark",
+    "shortId": "hbFukuoka",
+    "shortName": "HB福岡"
   },
   {
     "id": "45",
     "name": "北海道",
-    "liveNameId": "live-tour-2024-heart-bookmark"
+    "liveNameId": "live-tour-2024-heart-bookmark",
+    "shortId": "hbHokkaido",
+    "shortName": "HB北海道"
   },
   {
     "id": "46",
     "name": "千葉1日目",
-    "liveNameId": "live-tour-2024-heart-bookmark"
+    "liveNameId": "live-tour-2024-heart-bookmark",
+    "shortId": "hbChiba1",
+    "shortName": "HB千葉1日目"
   },
   {
     "id": "47",
     "name": "千葉2日目",
-    "liveNameId": "live-tour-2024-heart-bookmark"
+    "liveNameId": "live-tour-2024-heart-bookmark",
+    "shortId": "hbChiba2",
+    "shortName": "HB千葉2日目"
   }
 ]
