@@ -5,8 +5,8 @@ type Props = {
 };
 
 export const metadata: Metadata = {
-  title: '聴いたことがない曲一覧',
-  description: 'あなたがまだライブで聴いたことがない曲を一覧で表示します。',
+  title: '聴いたことのない曲一覧',
+  description: 'あなたがまだライブで聴いたことのない曲を一覧で表示します。',
 };
 
 export default function RootLayout({ children }: Props) {

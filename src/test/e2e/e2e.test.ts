@@ -62,4 +62,10 @@ test('最初の画面から通しで実行できる', async ({ page }) => {
   await page.getByText('埼玉昼公演').click();
   await page.getByText('兵庫').nth(4).click();
   await page.getByRole('button', { name: '結果を見る' }).click();
+  await expect(
+    page.getByRole('heading', { name: /あなたが聴いたことのない曲は82曲中、/ }),
+  ).toBeVisible();
+  await page.getByRole('button', { name: '曲の一覧を見る👀' }).click();
+  await page.getByRole('textbox', { name: '夢のつぼみ' }).click();
+  await page.getByRole('textbox', { name: '夢のつぼみ' }).fill('step');
 });
