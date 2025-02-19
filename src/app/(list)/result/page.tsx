@@ -73,7 +73,7 @@ export default async function Home({ searchParams }: Props) {
       {unsungSongs.length === 0 ? (
         ''
       ) : (
-        <h1 className='pb-4 font-bold text-2xl'>聴いたことない曲一覧</h1>
+        <h1 className='pb-4 font-bold text-2xl'>ライブで聴いたことのない曲一覧♪✨️</h1>
       )}
       <ResultInfo params={unsungSongs} url={url} />
     </div>

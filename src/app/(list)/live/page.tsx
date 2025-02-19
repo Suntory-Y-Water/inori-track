@@ -6,7 +6,7 @@ export default function page() {
   const lives: LiveName[] = liveNames;
   return (
     <div>
-      <h1 className='pb-4 font-bold text-2xl'>参加したライブを選ぼう</h1>
+      <h1 className='pb-4 font-bold text-2xl'>参加したライブを選ぼう🎤✨️</h1>
       <LiveCheckBoxForm params={lives} />
     </div>
   );

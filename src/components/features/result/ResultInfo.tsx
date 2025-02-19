@@ -35,12 +35,15 @@ export default function ResultInfo({ params, url }: Props) {
         </ul>
       ))}
       <div>
+        <p className='pt-4 pb-2'>
+          次のページで、あなたがライブで聴いたことがある曲の一覧も確認することができます✨️
+        </p>
         <Link href={`report/${queryParams}`}>
           <Button
             variant='default'
             className='w-full items-center justify-center p-6 my-2 tracking-tight'
           >
-            詳しい結果を見る👀
+            曲の一覧を見る👀
           </Button>
         </Link>
         <a href={tweetUrl} target='_blank' rel='noreferrer'>

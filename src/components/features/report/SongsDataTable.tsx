@@ -53,13 +53,13 @@ export function SongsDataTable({ data }: Props) {
         <Table className='min-w-[1000px]'>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className='sticky top-0 z-20'>
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
                     className={
-                      // 曲名カラムを左側に固定
-                      header.column.id === 'name' ? 'sticky left-0 z-10 bg-white' : ''
+                      // 見出しセルが透けないよう bg-white などで固定
+                      header.column.id === 'name' ? 'sticky left-0 z-20 bg-white' : ''
                     }
                   >
                     {header.isPlaceholder
@@ -73,21 +73,21 @@ export function SongsDataTable({ data }: Props) {
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => {
-                // 回数が1回以上なら背景色とホバー時の色を変更する
+                // count が 0 以上の場合は背景色を青くする
                 const rowClasses =
-                  row.original.count > 0 ? 'bg-primary/30 hover:bg-primary/40' : '';
+                  row.original.count > 0
+                    ? 'bg-blue20 hover:bg-blue30'
+                    : 'bg-white hover:bg-slate-50';
+
                 return (
-                  <TableRow
-                    key={row.id}
-                    data-state={row.getIsSelected() && 'selected'}
-                    className={rowClasses}
-                  >
+                  <TableRow key={row.id} className={rowClasses}>
                     {row.getVisibleCells().map((cell) => (
                       <TableCell
                         key={cell.id}
                         className={
-                          // 曲名カラムを左側に固定
-                          cell.column.id === 'name' ? 'sticky left-0 z-10 bg-white' : ''
+                          cell.column.id === 'name'
+                            ? 'sticky left-0 z-10 w-[140px] min-w-[140px] text-baseblack bg-inherit '
+                            : ''
                         }
                       >
                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -99,7 +99,7 @@ export function SongsDataTable({ data }: Props) {
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className='h-24 text-center'>
-                  No results.
+                  No results. - お探しの曲が見つかりませんでした🤔
                 </TableCell>
               </TableRow>
             )}

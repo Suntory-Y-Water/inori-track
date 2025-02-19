@@ -1,6 +1,5 @@
-import * as React from 'react';
-
 import { cn } from '@/lib/utils';
+import * as React from 'react';
 
 const Table = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) => (
@@ -44,7 +43,9 @@ const TableRow = React.forwardRef<HTMLTableRowElement, React.HTMLAttributes<HTML
     <tr
       ref={ref}
       className={cn(
-        'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
+        // デフォルトの hover:bg-muted/50 を削除し、
+        // その代わりに "group" をつけるだけにする
+        'group border-b transition-colors data-[state=selected]:bg-muted',
         className,
       )}
       {...props}
@@ -60,7 +61,7 @@ const TableHead = React.forwardRef<
   <th
     ref={ref}
     className={cn(
-      'h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0',
+      'h-12 px-4 text-left align-middle font-medium text-muted-foreground whitespace-nowrap [&:has([role=checkbox])]:pr-0',
       className,
     )}
     {...props}
