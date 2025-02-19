@@ -43,7 +43,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     },
     twitter: {
       description:
-        'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことがない曲を見つけることができるサービスです。',
+        'いのなびは水瀬いのりさんの曲で、ライブでまだ聴いたことのない曲を見つけることができるサービスです。',
       card: 'summary_large_image',
       images: {
         // 作ったAPIのURLを指定
