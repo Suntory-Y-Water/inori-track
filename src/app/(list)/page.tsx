@@ -8,7 +8,7 @@ export default function Home() {
       <div className='flex flex-col flex-1'>
         <div className='flex flex-col'>
           <p className='py-2'>
-            いのなびはまだ水瀬いのりさんのライブで、まだ聴いたことのない曲を見つけることできるサービスです
+            いのなびは水瀬いのりさんのライブで、まだ聴いたことのない曲を見つけることできるサービスです
           </p>
           <p className='py-2'>
             今すぐ始めるを押したあと、自分が参加したライブ名と会場名を選ぶことで、まだ聴いたことのない曲を一覧で表示することができます。

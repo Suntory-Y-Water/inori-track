@@ -37,7 +37,7 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <div>
-      <h1 className='pb-4 font-bold text-2xl'>参加したライブを選ぼう</h1>
+      <h1 className='pb-4 font-bold text-2xl'>参加した会場を選ぼう🏟️✨️</h1>
       <VenueCheckBoxForm params={liveDetails} />
     </div>
   );

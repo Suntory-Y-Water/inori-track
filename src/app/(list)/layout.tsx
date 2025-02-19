@@ -3,5 +3,9 @@ type Props = {
 };
 
 export default function RootLayout({ children }: Props) {
-  return <div className='flex flex-col items-center'>{children}</div>;
+  return (
+    <main className='mx-auto w-full px-4 max-w-[768px] py-6 text-baseblack flex flex-col items-center'>
+      {children}
+    </main>
+  );
 }
