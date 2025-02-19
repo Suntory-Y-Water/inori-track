@@ -23,10 +23,10 @@ export default async function Home({ searchParams }: Props) {
       <div className='flex flex-col flex-1'>
         <div className='flex flex-col'>
           <h1 className='text-xl md:text-2xl font-bold text-primary-foreground'>
-            ライブで聴いたことがある曲一覧📝
+            ライブで聴いたことのある曲一覧📝
           </h1>
           <p className='py-2'>
-            あなたが参加したライブで、聴いたことがある曲の一覧と回数を確認できます。
+            あなたが参加したライブで、聴いたことのある曲の一覧と回数を確認できます。
           </p>
           <SongsDataTable data={data} />
         </div>

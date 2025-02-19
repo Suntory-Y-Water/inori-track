@@ -28,7 +28,6 @@ export type Venue = {
  * ユーザーが選択したライブに関連する会場とライブ名の型
  */
 export type SongInfo = {
-  nameId: string;
   name: string;
   count: number;
   rsgTokyo: string;

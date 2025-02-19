@@ -36,7 +36,7 @@ export default function ResultInfo({ params, url }: Props) {
       ))}
       <div>
         <p className='pt-4 pb-2'>
-          次のページで、あなたがライブで聴いたことがある曲の一覧も確認することができます✨️
+          次のページで、あなたがライブで聴いたことのある曲の一覧も確認することができます✨️
         </p>
         <Link href={`report/${queryParams}`}>
           <Button

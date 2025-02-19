@@ -60,7 +60,6 @@ export function getSongsData(queryParams: { venue_id?: string }): SongInfo[] {
     let count = 0;
     // songData の型を Partial<Record<keyof SongInfo, string | number>> に変更
     const songData: Partial<Record<keyof SongInfo, string | number>> = {
-      nameId: song.id,
       name: song.title,
       count: 0,
     };

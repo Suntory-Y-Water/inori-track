@@ -9,7 +9,7 @@ export default defineConfig({
     environment: 'happy-dom',
     setupFiles: './vitest-setup.ts',
     // e2eテストは除外
-    include: ['src/test/app/**/*.test.tsx'],
+    include: ['src/test/app/**/*.test.tsx', 'src/test/components/**/*.test.tsx'],
   },
   resolve: {
     alias: {
