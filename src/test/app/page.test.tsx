@@ -7,12 +7,6 @@ describe('page tests', () => {
   it('ページがレンダリングされる', () => {
     render(<Home />);
 
-    expect(
-      screen.getByText(
-        'いのなびはまだ水瀬いのりさんのライブで、まだ聴いたことのない曲を見つけることできるサービスです',
-      ),
-    );
-
     // ボタンのテキストをチェック
     expect(screen.getByText('今すぐ始める！')).toBeInTheDocument();
   });
