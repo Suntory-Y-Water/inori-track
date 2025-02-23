@@ -90,7 +90,7 @@ pnpm test
 - **E2E テスト** (Playwright) は以下のコマンドです。
 
 ```bash
-pnpm exec playwright test
+pnpm e2e
 ```
 
 ---

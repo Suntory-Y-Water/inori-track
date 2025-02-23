@@ -41,6 +41,13 @@ export default function Home() {
               ))}
             </ul>
           </div>
+          <div className='py-4'>
+            <Link href='/contact'>
+              <p className='text-primary-foreground hover:underline'>
+                お問い合わせはこちらからどうぞ。ご質問やご意見をお待ちしております。
+              </p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
