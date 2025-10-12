@@ -64,4 +64,14 @@ export const liveNames = [
     name: 'いのりまち町民集会2024 -ACOUSTIC LIVE Wonder Caravan！-',
     liveType: '町民集会',
   },
+  {
+    id: 'inorimachi-town-meeting-2025-acoustic-live-cinemati-diary-',
+    name: 'いのりまち町民集会2025 -ACOUSTIC LIVE シネマチックダイアリー-',
+    liveType: '町民集会',
+  },
+  {
+    id: 'live-tour-2025-travel-record',
+    name: 'Inori Minase 10th ANNIVERSARY LIVE TOUR Travel Record',
+    liveType: '水瀬いのり個人名義',
+  },
 ];

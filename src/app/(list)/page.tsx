@@ -31,7 +31,7 @@ export default function Home() {
           <div className='py-2'>
             <strong>Q. 対象のライブを教えてください。</strong>
             <p className='py-1'>
-              現在(2024年9月16日時点)は以下のライブ、町民集会が対象になっております。
+              現在(2025年10月12日時点)は以下のライブ、町民集会が対象になっております。
             </p>
             <ul className='list-disc list-outside ml-6'>
               {liveNames.map((liveName) => (

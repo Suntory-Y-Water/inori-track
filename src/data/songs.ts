@@ -327,4 +327,32 @@ export const songs = [
     id: '82',
     title: '燈籠光柱',
   },
+  {
+    id: '83',
+    title: 'Turquoise',
+  },
+  {
+    id: '84',
+    title: '夢のつづき',
+  },
+  {
+    id: '85',
+    title: 'まだ、言わないで。',
+  },
+  {
+    id: '86',
+    title: 'アニバーサリー',
+  },
+  {
+    id: '87',
+    title: 'NEXT DECADE',
+  },
+  {
+    id: '88',
+    title: 'My Orchestra',
+  },
+  {
+    id: '89',
+    title: '海踏みのスピカ',
+  },
 ];
