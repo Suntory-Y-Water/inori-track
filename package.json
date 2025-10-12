@@ -2,6 +2,9 @@
   "name": "inori-track",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,7 +15,7 @@
     "test": "vitest",
     "codegen": "playwright codegen https://inori-track.vercel.app/",
     "e2e": "playwright test",
-    "typecheck" : "tsc --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.0",
