@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Confetti from '@/components/ui/confetti';
-import songs from '@/data/songs.json';
+import { songs } from '@/data';
 import Link from 'next/link';
 
 type Props = {

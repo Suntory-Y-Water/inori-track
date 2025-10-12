@@ -1,6 +1,4 @@
-import songs from '@/data/songs.json';
-import songsSung from '@/data/soungsSong.json';
-import venues from '@/data/venues.json';
+import { songs, songsSung, venues } from '@/data';
 import type { SongInfo } from '@/types';
 import { type ClassValue, clsx } from 'clsx';
 import { notFound } from 'next/navigation';

@@ -1,5 +1,5 @@
 import LiveCheckBoxForm from '@/components/features/live/LiveCheckBoxForm';
-import liveNames from '@/data/liveNames.json';
+import { liveNames } from '@/data';
 import type { LiveName } from '@/types';
 
 export default function page() {

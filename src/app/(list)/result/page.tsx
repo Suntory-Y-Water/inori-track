@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import ResultInfo from '@/components/features/result/ResultInfo';
-import songs from '@/data/songs.json';
+import { songs } from '@/data';
 import { getResultSongs } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';

@@ -1,5 +1,5 @@
 import LiveCheckBoxForm from '@/components/features/live/LiveCheckBoxForm';
-import liveNames from '@/data/liveNames.json';
+import { liveNames } from '@/data';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { vi } from 'vitest';

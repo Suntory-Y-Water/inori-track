@@ -29,7 +29,17 @@ export default function LiveCheckBoxForm({ params }: Props) {
   function handleButtonClick(e: React.SyntheticEvent) {
     e.preventDefault();
     const selectedItems = form.watch('items');
-    proceedWithNavigation(selectedItems);
+    // ネタバレ防止対象のライブが選択されているかチェック
+    // TODO: イケてないので改善したいし環境変数から取ってきて制御したほうがいい
+    const hasAlertLive = selectedItems.includes('live-tour-2025-travel-record');
+
+    if (hasAlertLive) {
+      // ネタバレ防止対象のライブが選択されていた場合、Popup を表示
+      setAlertDialogOpen(true);
+    } else {
+      // 選択されていない場合は通常の処理を実行
+      proceedWithNavigation(selectedItems);
+    }
   }
 
   // 選択されたアイテムでナビゲーションを実行する関数
@@ -99,7 +109,8 @@ export default function LiveCheckBoxForm({ params }: Props) {
       <Popup
         isOpen={isAlertDialogOpen}
         onClose={cancelAcousticLive}
-        description='Inori Minase LIVE TOUR 2024 heart bookmarkのネタバレが含まれますが、よろしいですか？'
+        // TODO: ここも環境変数から取ってきて制御したほうがいい
+        description='Inori Minase 10th ANNIVERSARY LIVE TOUR Travel Recordのネタバレが含まれますが、よろしいですか？'
         okText='会場を選択する'
         cancelText='選び直す'
         onConfirm={confirmAcousticLive}
