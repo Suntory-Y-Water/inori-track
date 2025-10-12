@@ -1,5 +1,5 @@
 import ResultInfo from '@/components/features/result/ResultInfo';
-import songs from '@/data/songs.json';
+import { songs } from '@/data';
 import { getResultSongs } from '@/lib/utils';
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';

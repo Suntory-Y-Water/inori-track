@@ -1,4 +1,4 @@
-import songs from '@/data/songs.json';
+import { songs } from '@/data';
 import { ImageResponse } from 'next/og';
 import type { NextRequest } from 'next/server';
 import { z } from 'zod';

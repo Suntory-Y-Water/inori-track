@@ -1,8 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import VenueCheckBoxForm from '@/components/features/venue/VenueCheckBoxForm';
-import liveNames from '@/data/liveNames.json';
-import venues from '@/data/venues.json';
+import { liveNames, venues } from '@/data';
 import type { LiveAndVenuesInfo } from '@/types';
 import { notFound } from 'next/navigation';
 

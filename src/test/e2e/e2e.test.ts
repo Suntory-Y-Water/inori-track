@@ -1,4 +1,4 @@
-import liveNames from '@/data/liveNames.json';
+import { liveNames } from '@/data';
 import { expect } from '@playwright/test';
 import { test } from '@playwright/test';
 
