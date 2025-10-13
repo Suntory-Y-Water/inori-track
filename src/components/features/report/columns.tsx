@@ -1,5 +1,3 @@
-'use client';
-
 import type { SongInfo } from '@/types';
 import type { ColumnDef } from '@tanstack/react-table';
 
