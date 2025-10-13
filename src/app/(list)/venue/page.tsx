@@ -26,13 +26,19 @@ export default async function Home({ searchParams }: Props) {
     notFound();
   }
 
+  // venues を liveNameId でグルーピング
+  const venuesByLiveId = new Map<string, { id: string; name: string }[]>();
+  for (const venue of venues) {
+    const existing = venuesByLiveId.get(venue.liveNameId) || [];
+    existing.push({ id: venue.id, name: venue.name });
+    venuesByLiveId.set(venue.liveNameId, existing);
+  }
+
   // 各ライブに対して対応する会場を検索
-  const liveDetails: LiveAndVenuesInfo[] = lives.map((live) => {
-    const liveVenues = venues
-      .filter((venue) => venue.liveNameId === live.id)
-      .map((venue) => ({ id: venue.id, name: venue.name }));
-    return { liveName: live.name, venues: liveVenues };
-  });
+  const liveDetails: LiveAndVenuesInfo[] = lives.map((live) => ({
+    liveName: live.name,
+    venues: venuesByLiveId.get(live.id) || [],
+  }));
 
   return (
     <div>
