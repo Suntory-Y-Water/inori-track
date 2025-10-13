@@ -26,12 +26,19 @@ export default function LiveCheckBoxForm({ params }: Props) {
     },
   });
 
+  // 環境変数からネタバレ対象のライブIDを取得
+  const spoilerVenueId = process.env.NEXT_PUBLIC_SPOILER_VENUE_ID;
+
+  // ネタバレ対象のライブ情報を取得
+  const spoilerVenue = spoilerVenueId
+    ? params.find((param) => param.id === spoilerVenueId)
+    : undefined;
+
   function handleButtonClick(e: React.SyntheticEvent) {
     e.preventDefault();
     const selectedItems = form.watch('items');
     // ネタバレ防止対象のライブが選択されているかチェック
-    // TODO: イケてないので改善したいし環境変数から取ってきて制御したほうがいい
-    const hasAlertLive = selectedItems.includes('live-tour-2025-travel-record');
+    const hasAlertLive = spoilerVenueId && selectedItems.includes(spoilerVenueId);
 
     if (hasAlertLive) {
       // ネタバレ防止対象のライブが選択されていた場合、Popup を表示
@@ -109,8 +116,11 @@ export default function LiveCheckBoxForm({ params }: Props) {
       <Popup
         isOpen={isAlertDialogOpen}
         onClose={cancelAcousticLive}
-        // TODO: ここも環境変数から取ってきて制御したほうがいい
-        description='Inori Minase 10th ANNIVERSARY LIVE TOUR Travel Recordのネタバレが含まれますが、よろしいですか？'
+        description={
+          spoilerVenue
+            ? `${spoilerVenue.name}のネタバレが含まれますが、よろしいですか？`
+            : 'ネタバレが含まれますが、よろしいですか？'
+        }
         okText='会場を選択する'
         cancelText='選び直す'
         onConfirm={confirmAcousticLive}
