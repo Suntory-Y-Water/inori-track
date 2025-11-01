@@ -311,18 +311,18 @@ export const venues = [
     liveNameId: 'live-tour-2025-travel-record',
     shortId: 'trHyogo',
   },
-  // {
-  //   id: '53',
-  //   name: '静岡',
-  //   liveNameId: 'live-tour-2025-travel-record',
-  //   shortId: 'trShizuoka',
-  // },
-  // {
-  //   id: '54',
-  //   name: '福岡',
-  //   liveNameId: 'live-tour-2025-travel-record',
-  //   shortId: 'trFukuoka',
-  // },
+  {
+    id: '53',
+    name: '静岡',
+    liveNameId: 'live-tour-2025-travel-record',
+    shortId: 'trShizuoka',
+  },
+  {
+    id: '54',
+    name: '福岡',
+    liveNameId: 'live-tour-2025-travel-record',
+    shortId: 'trFukuoka',
+  },
   // {
   //   id: '55',
   //   name: '岡山',
