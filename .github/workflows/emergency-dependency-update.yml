@@ -33,7 +33,6 @@ jobs:
           repositories: ${{ github.event.repository.name }}
           permission-contents: write
           permission-pull-requests: write
-
       - name: Update dependencies
         env:
           PACKAGE_NAME: ${{ inputs.package_name }}
