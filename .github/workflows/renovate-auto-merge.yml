@@ -10,7 +10,7 @@ jobs:
   auto-merge:
     if: |
       contains(github.event.pull_request.labels.*.name, 'automerge') &&
-      (github.event.pull_request.user.login == 'renovate[bot]' || github.event.pull_request.user.login == 'github-actions[bot]')
+      (github.event.pull_request.user.login == 'renovate[bot]' || github.event.pull_request.user.login == 'sui-blog-automation[bot]')
     timeout-minutes: 30
     permissions:
       contents: write
